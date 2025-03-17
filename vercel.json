@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "buildCommand": "npm install && vite build --config vite.config.vercel.ts",
+  "outputDirectory": "dist",
+  "routes": [
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
