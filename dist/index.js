@@ -24,7 +24,7 @@ import path, { dirname } from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 import { fileURLToPath } from "url";
 var __filename = fileURLToPath(import.meta.url);
-var __dirname2 = dirname(__filename);
+var __dirname = dirname(__filename);
 var vite_config_default = defineConfig(async () => {
   const plugins = [
     react(),
@@ -35,7 +35,7 @@ var vite_config_default = defineConfig(async () => {
     const { cartographer } = await import("@replit/vite-plugin-cartographer");
     plugins.push(cartographer());
   }
-  const rootDir = path.resolve(__dirname2);
+  const rootDir = path.resolve(__dirname);
   const clientDir = path.resolve(rootDir, "client");
   return {
     plugins,
@@ -85,7 +85,7 @@ var vite_config_default = defineConfig(async () => {
 // server/vite.ts
 import { nanoid } from "nanoid";
 var __filename2 = fileURLToPath2(import.meta.url);
-var __dirname3 = dirname2(__filename2);
+var __dirname2 = dirname2(__filename2);
 var viteLogger = createLogger();
 function log(message, source = "express") {
   const formattedTime = (/* @__PURE__ */ new Date()).toLocaleTimeString("en-US", {
@@ -120,7 +120,7 @@ async function setupVite(app2, server) {
     const url = req.originalUrl;
     try {
       const clientTemplate = path2.resolve(
-        __dirname3,
+        __dirname2,
         "..",
         "client",
         "index.html"
@@ -139,7 +139,7 @@ async function setupVite(app2, server) {
   });
 }
 function serveStatic(app2) {
-  const distPath = path2.resolve(__dirname3, "public");
+  const distPath = path2.resolve(__dirname2, "public");
   if (!fs.existsSync(distPath)) {
     throw new Error(
       `Could not find the build directory: ${distPath}, make sure to build the client first`
@@ -153,6 +153,9 @@ function serveStatic(app2) {
 
 // server/index.ts
 import path3 from "path";
+import { fileURLToPath as fileURLToPath3 } from "url";
+var __filename3 = fileURLToPath3(import.meta.url);
+var __dirname3 = path3.dirname(__filename3);
 var app = express2();
 app.use(cors());
 app.use(express2.json());
@@ -179,10 +182,10 @@ app.use((req, res, next) => {
   });
   next();
 });
-app.use(express2.static(path3.join(__dirname, "../client")));
+app.use(express2.static(path3.join(__dirname3, "../client")));
 app.get("*", (req, res) => {
   if (!req.path.startsWith("/api")) {
-    res.sendFile(path3.join(__dirname, "../client/index.html"));
+    res.sendFile(path3.join(__dirname3, "../client/index.html"));
   } else {
     res.status(404).send("API endpoint not found");
   }
