@@ -11,7 +11,6 @@ const aiAgents = [
   {
     title: "BCP AI",
     description: "Powerful NLP agent for text analysis, sentiment detection, and content generation",
-    price: "$99",
     features: ["Content Generation", "Sentiment Analysis", "Text Classification"],
     category: "NLP",
     image: "https://tse3.mm.bing.net/th?id=OIP.sGk8A4qOiMs51cAyaRxTxgHaHa&pid=Api&P=0&h=180"
@@ -19,7 +18,6 @@ const aiAgents = [
   {
     title: "NikoNiko",
     description: "Advanced image recognition and processing capabilities for various applications",
-    price: "$149",
     features: ["Object Detection", "Face Recognition", "Image Segmentation"],
     category: "Vision",
     image: "https://images.unsplash.com/photo-1576400883215-7083980b6193?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
@@ -27,7 +25,6 @@ const aiAgents = [
   {
     title: "Data Analytics Bot",
     description: "Intelligent agent for data analysis, visualization, and insights generation",
-    price: "$129",
     features: ["Data Visualization", "Predictive Analytics", "Pattern Recognition"],
     category: "Analytics",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
@@ -35,7 +32,6 @@ const aiAgents = [
   {
     title: "Conversation AI",
     description: "Natural language processing agent for human-like conversations and customer support",
-    price: "$199",
     features: ["24/7 Support", "Multi-language", "Context Awareness"],
     category: "Chatbot",
     image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
@@ -43,7 +39,6 @@ const aiAgents = [
   {
     title: "Text Analysis Agent",
     description: "Powerful NLP agent for text analysis, sentiment detection, and content generation",
-    price: "$99",
     features: ["Content Generation", "Sentiment Analysis", "Text Classification"],
     category: "NLP",
     image: "https://images.wondershare.com/virtulook/articles/best-ai-product-photo-generators-1.jpg"
@@ -51,7 +46,6 @@ const aiAgents = [
   {
     title: "Computer Vision Assistant",
     description: "Advanced image recognition and processing capabilities for various applications",
-    price: "$149",
     features: ["Object Detection", "Face Recognition", "Image Segmentation"],
     category: "Vision",
     image: "https://i.pinimg.com/originals/e3/02/0c/e3020c84aa4e898270fd9ca4c2f5c712.png"
@@ -59,7 +53,6 @@ const aiAgents = [
   {
     title: "Data Analytics Bot",
     description: "Intelligent agent for data analysis, visualization, and insights generation",
-    price: "$129",
     features: ["Data Visualization", "Predictive Analytics", "Pattern Recognition"],
     category: "Analytics",
     image: "https://www.epicvibesng.com/wp-content/uploads/2017/06/fut.jpg"
@@ -67,7 +60,6 @@ const aiAgents = [
   {
     title: "Conversation AI",
     description: "Natural language processing agent for human-like conversations and customer support",
-    price: "$199",
     features: ["24/7 Support", "Multi-language", "Context Awareness"],
     category: "Chatbot",
     image: "https://i.ytimg.com/vi/9jYKUVP49Po/maxresdefault.jpg"

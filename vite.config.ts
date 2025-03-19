@@ -22,7 +22,7 @@ export default defineConfig(async () => {
     plugins.push(cartographer());
   }
 
-  // Xác định các đường dẫn tuyệt đối - simplified and corrected
+  // Xác định các đường dẫn tuyệt đối
   const rootDir = path.resolve(__dirname);
   const clientDir = path.resolve(rootDir, "client");
 
@@ -52,7 +52,12 @@ export default defineConfig(async () => {
     },
     server: {
       strictPort: false,
-      host: true, // Allow connections from all IPs
+      host: true, // Cho phép tất cả IP kết nối
+      allowedHosts: [
+        "localhost",
+        "127.0.0.1",
+        "4081481a-2c8d-4085-afa2-5397e16dfc87-00-3t2bpscdladvd.sisko.replit.dev"
+      ], // Thêm host bị chặn vào danh sách cho phép
       fs: {
         strict: false, // Allow serving files from outside of project root
         allow: [clientDir], // Explicitly allow the client directory

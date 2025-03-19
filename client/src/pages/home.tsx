@@ -70,7 +70,7 @@ export default function Home() {
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
               AIPartners.asia:{" "}
               <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
-                One-stop Winning AI Transformation in APAC
+                One-stop Winning AI Transformation station in APAC
               </span>
             </h1>
             <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
@@ -281,7 +281,6 @@ export default function Home() {
                       { name: "Tuan Nguyen", role: "AI Solutions", imgSrc: "https://tse4.mm.bing.net/th?id=OIP.zeeoSeLcH19kuQ1ABNOGCwHaHU&pid=Api&P=0&h=180" },
                       { name: "Long Nguyen", role: "Data Solutions", imgSrc: Long },
                       { name: "Vinh Nguyen", role: "AI Silutions", imgSrc: Vinh },
-                      { name: "Yen Tran", role: "AI Technology", imgSrc: "https://play-lh.googleusercontent.com/7Ak4Ye7wNUtheIvSKnVgGL_OIZWjGPZNV6TP_3XLxHC-sDHLSE45aDg41dFNmL5COA" },
                       { name: "Trung BB", role: "AI Technology", imgSrc: TrungBB }
                     ].map((member, index) => (
                       <div key={index} className="flex flex-col items-center">
@@ -326,12 +325,12 @@ export default function Home() {
               },
               {
                 icon: Users,
-                title: "50+ Global Clients",
+                title: "10+ Global Clients",
                 description: "Trusted by businesses worldwide for AI transformation.",
               },
               {
                 icon: Trophy,
-                title: "15+ Industry Awards",
+                title: "3 Industry Awards",
                 description: "Recognized for excellence in AI innovation.",
               },
               {

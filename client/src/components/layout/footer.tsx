@@ -15,7 +15,7 @@ export default function Footer() {
           </p>
           <div className="space-y-2">
             <a href="mailto:contact@aipartners.asia" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-              info@aipartners.asia
+              tan.mai@aipartners.asia
             </a>
           </div>
         </div>
