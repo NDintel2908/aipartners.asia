@@ -280,7 +280,7 @@ export default function Home() {
                       { name: "Quang Nguyen", role: "AI Technology", imgSrc: Quang },
                       { name: "Tuan Nguyen", role: "AI Solutions", imgSrc: "https://tse4.mm.bing.net/th?id=OIP.zeeoSeLcH19kuQ1ABNOGCwHaHU&pid=Api&P=0&h=180" },
                       { name: "Long Nguyen", role: "Data Solutions", imgSrc: Long },
-                      { name: "Vinh Nguyen", role: "AI Silutions", imgSrc: Vinh },
+                      { name: "Vinh Nguyen", role: "AI Solutions", imgSrc: Vinh },
                       { name: "Trung BB", role: "AI Technology", imgSrc: TrungBB }
                     ].map((member, index) => (
                       <div key={index} className="flex flex-col items-center">
