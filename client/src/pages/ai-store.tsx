@@ -75,7 +75,7 @@ export default function AIStore() {
         transition={{ duration: 0.6 }}
         className="flex flex-col items-center space-y-4 text-center mb-12"
       >
-        <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white">
+        <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-black">
           AI Agent Marketplace
         </h1>
 
