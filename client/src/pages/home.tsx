@@ -359,7 +359,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full py-12 md:py-24 relative text-white">
+      <section className="w-full py-12 md:py-24 relative text-white mb-20 rounded-lg overflow-hidden">
         {/* GIF Background */}
         <div className="absolute inset-0 w-full h-full overflow-hidden">
           <div className="absolute inset-0 bg-black/60 z-10"></div> {/* Overlay để làm tối GIF */}
