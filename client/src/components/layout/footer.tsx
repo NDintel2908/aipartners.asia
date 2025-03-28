@@ -1,4 +1,3 @@
-
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { FaFacebook, FaLinkedin } from "react-icons/fa";
@@ -6,20 +5,7 @@ import { FaFacebook, FaLinkedin } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer className="bg-black text-white py-16 px-4 md:px-6 lg:px-8">
-      <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-4 max-w-7xl mx-auto">
-        {/* Contact */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Contact Us</h3>
-          <p className="text-sm text-muted-foreground">
-            Get in touch with our team for any inquiries.
-          </p>
-          <div className="space-y-2">
-            <a href="mailto:contact@aipartners.asia" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-              tan.mai@aipartners.asia
-            </a>
-          </div>
-        </div>
-
+      <div className="grid gap-8 grid-cols-1 sm:grid-cols-3 max-w-7xl mx-auto">
         {/* Quick Links */}
         <div className="space-y-4">
           <h3 className="text-lg font-semibold">Quick Links</h3>
