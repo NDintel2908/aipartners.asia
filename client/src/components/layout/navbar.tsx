@@ -15,7 +15,7 @@ const navItems = [
   { label: "AI Builders", href: "/aibuilders" },
   { label: "AI Trainers", href: "/ai-trainers" },
   { label: "AI Workforce", href: "/ai-workforce" },
-  { label: "AI Agent Marketplace", href: "/ai-store" },
+  { label: "AI Agents Market", href: "/ai-store" },
 ];
 
 export default function Navbar() {

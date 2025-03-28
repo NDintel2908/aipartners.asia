@@ -55,7 +55,7 @@ export default function AIStore() {
         className="flex flex-col items-center space-y-4 text-center mb-12"
       >
         <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-black">
-          AI Agent Marketplace
+          AI Agents Market
         </h1>
 
         <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">

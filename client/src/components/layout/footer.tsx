@@ -26,7 +26,7 @@ export default function Footer() {
               AI Workforce
             </Link>
             <Link href="/ai-store" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-              AI Store
+              AI Agents Market
             </Link>
           </div>
         </div>

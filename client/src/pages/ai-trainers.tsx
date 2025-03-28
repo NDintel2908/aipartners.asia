@@ -90,7 +90,7 @@ export default function AITrainers() {
           className="w-full"
         >
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-6 text-black">
-              A training hub
+              AI Trainers
           </h1>
           <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto">
             A training hub—where our expert training team cultivates highly competent professionals who possess practicial knowledge and deep understanding, enabling them to proficiently apply and develop AI in real-world scenarios.					
