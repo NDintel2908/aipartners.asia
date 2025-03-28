@@ -10,10 +10,10 @@ import { Phone, Mail, Users, Award, Briefcase, Trophy } from "lucide-react";
 const aiAgents = [
   {
     title: "BCP AI",
-    description: "streamlines B2B matchmaking by prioritizing relevant and high-quality connections.",
+    description: "Streamlines B2B matchmaking by prioritizing relevant and high-quality connections.",
     features: ["Priority Matching System", "Automated Lead Management", "Trust & Compliance Filters"],
     category: "B2B",
-    image: "https://tse3.mm.bing.net/th?id=OIP.sGk8A4qOiMs51cAyaRxTxgHaHa&pid=Api&P=0&h=180"
+    image: "https://scontent.fsgn2-7.fna.fbcdn.net/v/t39.30808-6/460855384_944279037718787_8834667009096923909_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeH_oKiVhwS1jpHUSwj1A6_gzupNiMzB4VHO6k2IzMHhUeYdCci-1CRDX1yUFho2OJfecY7ap_WYp5Ccin-83hJn&_nc_ohc=DRaDwpIO9EIQ7kNvgF_0stz&_nc_oc=AdncvQsSjsiIqFYEKtHjMF0pBWuksL303w2p5rElQHSNRimDYdZn5HcGekgi-hLvB0I&_nc_zt=23&_nc_ht=scontent.fsgn2-7.fna&_nc_gid=T3NV0eAQz-Mlsvv9yXM8ow&oh=00_AYEYLysEqoTk-uR1pgCovFijf6laA5KaA0lOjhEhyprWeQ&oe=67EC9B54"
   },
   {
     title: "NikoNiko",
@@ -31,7 +31,7 @@ const aiAgents = [
   },
   {
     title: "AIFA",
-    description: "automates financial processes, enhances accuracy, and provides real-time insights for smarter decision-making.",
+    description: "Automates financial processes, enhances accuracy, and provides real-time insights for smarter decision-making.",
     features: ["Automated Bookkeeping", "Financial Insights & Forecasting", "Compliance & Fraud Detection"],
     category: "Finance",
     image: "https://www.springboard.com/blog/wp-content/uploads/2021/10/shutterstock_1053717473-scaled.jpg"
@@ -114,21 +114,7 @@ export default function AIStore() {
           </motion.div>
         ))}
       </div>
-      {/* CTA Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="flex justify-center mt-16 mb-12"
-      >
-        <Button 
-          className="w-[200px] h-[50px] bg-blue-600 hover:bg-blue-700 text-white text-lg transition-colors"
-          style={{ width: "200px", height: "50px" }}
-        >
-          Get Consult Now
-          <ArrowRightIcon className="ml-2 h-4 w-4" />
-        </Button>
-      </motion.div>
+      
 
       {/* Contact Box */}
       <section className="py-20">

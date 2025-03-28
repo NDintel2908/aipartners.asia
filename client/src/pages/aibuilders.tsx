@@ -144,22 +144,7 @@ export default function AIBuilders() {
         ))}
       </div>
 
-      {/* CTA Section with Logos */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="flex flex-col items-center mt-16 mb-12"
-      >
-        <Button
-          className="w-[200px] h-[50px] bg-blue-600 hover:bg-blue-700 text-white text-lg transition-colors"
-          style={{ width: "200px", height: "50px" }}
-        >
-          Get Consult Now
-          <ArrowRightIcon className="ml-2 h-4 w-4" />
-        </Button>
-        
-      </motion.div>
+      
 
       {/* Contact Box */}
       <section className="py-20">
