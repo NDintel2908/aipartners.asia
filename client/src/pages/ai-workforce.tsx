@@ -97,7 +97,7 @@ export default function AIWorkforce() {
 
       <section className="py-20">
         <div className="w-full">
-          <h2 className="text-3xl font-bold mb-10 text-center text-white">Our Programs</h2>
+          <h2 className="text-3xl font-bold mb-10 text-center text-black">Our Programs</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {programs.map((program, index) => (
               <motion.div
