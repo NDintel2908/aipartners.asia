@@ -16,6 +16,20 @@ const aiAgents = [
     image: "https://scontent.fsgn2-7.fna.fbcdn.net/v/t39.30808-6/460855384_944279037718787_8834667009096923909_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeH_oKiVhwS1jpHUSwj1A6_gzupNiMzB4VHO6k2IzMHhUeYdCci-1CRDX1yUFho2OJfecY7ap_WYp5Ccin-83hJn&_nc_ohc=DRaDwpIO9EIQ7kNvgF_0stz&_nc_oc=AdncvQsSjsiIqFYEKtHjMF0pBWuksL303w2p5rElQHSNRimDYdZn5HcGekgi-hLvB0I&_nc_zt=23&_nc_ht=scontent.fsgn2-7.fna&_nc_gid=T3NV0eAQz-Mlsvv9yXM8ow&oh=00_AYEYLysEqoTk-uR1pgCovFijf6laA5KaA0lOjhEhyprWeQ&oe=67EC9B54"
   },
   {
+    title: "AIFA",
+    description: "Automates financial processes, enhances accuracy, and provides real-time insights for smarter decision-making.",
+    features: ["Automated Bookkeeping", "Financial Insights & Forecasting", "Compliance & Fraud Detection"],
+    category: "Finance",
+    image: "https://www.springboard.com/blog/wp-content/uploads/2021/10/shutterstock_1053717473-scaled.jpg"
+  },
+  {
+    title: "FutureBox",
+    description: "Enhances efficiency through intelligent search, chatbot automation, and business support tools.",
+    features: ["AI-powered Search & Retrieval", "Smart Chatbot FAQ", "Business Support System"],
+    category: "B2B",
+    image: "https://futurebox.vitalify.asia/images/hero_icon.svg"
+  },
+  {
     title: "NikoNiko",
     description: "AI-powered HR tool that tracks employee moods and engagement for better team management.",
     features: ["Mood Tracking", "Engagement Reports", "Team Analytics"],
@@ -28,13 +42,6 @@ const aiAgents = [
     features: ["Data Visualization", "Predictive Analytics", "Pattern Recognition"],
     category: "Analytics",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    title: "AIFA",
-    description: "Automates financial processes, enhances accuracy, and provides real-time insights for smarter decision-making.",
-    features: ["Automated Bookkeeping", "Financial Insights & Forecasting", "Compliance & Fraud Detection"],
-    category: "Finance",
-    image: "https://www.springboard.com/blog/wp-content/uploads/2021/10/shutterstock_1053717473-scaled.jpg"
   },
   {
     title: "Smart Wiki",
