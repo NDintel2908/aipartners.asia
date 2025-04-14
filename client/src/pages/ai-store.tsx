@@ -13,7 +13,7 @@ const aiAgents = [
     description: "Streamlines B2B matchmaking by prioritizing relevant and high-quality connections.",
     features: ["Priority Matching System", "Automated Lead Management", "Trust & Compliance Filters"],
     category: "B2B",
-    image: "https://scontent.fsgn2-7.fna.fbcdn.net/v/t39.30808-6/460855384_944279037718787_8834667009096923909_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeH_oKiVhwS1jpHUSwj1A6_gzupNiMzB4VHO6k2IzMHhUeYdCci-1CRDX1yUFho2OJfecY7ap_WYp5Ccin-83hJn&_nc_ohc=DRaDwpIO9EIQ7kNvgF_0stz&_nc_oc=AdncvQsSjsiIqFYEKtHjMF0pBWuksL303w2p5rElQHSNRimDYdZn5HcGekgi-hLvB0I&_nc_zt=23&_nc_ht=scontent.fsgn2-7.fna&_nc_gid=T3NV0eAQz-Mlsvv9yXM8ow&oh=00_AYEYLysEqoTk-uR1pgCovFijf6laA5KaA0lOjhEhyprWeQ&oe=67EC9B54"
+    image: "https://bcp.global/assets/logo-global-v2-B5na8VJy.png"
   },
   {
     title: "AIFA",
@@ -48,6 +48,13 @@ const aiAgents = [
     description: "Powerful NLP agent for text analysis, sentiment detection, and content generation",
     features: ["Content Generation", "Sentiment Analysis", "Text Classification"],
     category: "NLP",
+    image: "https://images.wondershare.com/virtulook/articles/best-ai-product-photo-generators-1.jpg"
+  },
+  {
+    title: "Connext",
+    description: "Connext is an AI-powered customer engagement platform ultilizing conversational workflow agents to offer businesses with hightly effective conversations with their customers.",
+    features: ["AI-powered CRM", "Internal/External communication", "Virtual assistants"],
+    category: "Platform",
     image: "https://images.wondershare.com/virtulook/articles/best-ai-product-photo-generators-1.jpg"
   }
 ];
