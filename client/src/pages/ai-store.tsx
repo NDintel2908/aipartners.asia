@@ -13,7 +13,7 @@ const aiAgents = [
     description: "Streamlines B2B matchmaking by prioritizing relevant and high-quality connections.",
     features: ["Priority Matching System", "Automated Lead Management", "Trust & Compliance Filters"],
     category: "B2B",
-    image: "https://bcp.global/assets/logo-global-v2-B5na8VJy.png"
+    image: "/src/pages/product/bcp.jpg"
   },
   {
     title: "AIFA",
