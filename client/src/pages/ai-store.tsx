@@ -55,7 +55,7 @@ const aiAgents = [
     description: "Connext is an AI-powered customer engagement platform ultilizing conversational workflow agents to offer businesses with hightly effective conversations with their customers.",
     features: ["AI-powered CRM", "Internal/External communication", "Virtual assistants"],
     category: "Platform",
-    image: "https://images.wondershare.com/virtulook/articles/best-ai-product-photo-generators-1.jpg"
+    image: "/src/pages/product/connext.png"
   }
 ];
 
