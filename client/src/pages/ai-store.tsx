@@ -5,7 +5,11 @@ import { Badge } from "../components/ui/badge";
 import { ShoppingCart } from "lucide-react";
 import { ArrowLeft, ArrowRight, ArrowRight as ArrowRightIcon } from "lucide-react";
 import { Phone, Mail, Users, Award, Briefcase, Trophy } from "lucide-react";
-
+import aifa from "./product/aifa.png";
+import bcp from "./product/bcp.jpg";
+import connext from "./product/connext.png";
+import niko from "./product/niko.png";
+import fb from "./product/fb.png";
 
 const aiAgents = [
   {
@@ -13,28 +17,28 @@ const aiAgents = [
     description: "Streamlines B2B matchmaking by prioritizing relevant and high-quality connections.",
     features: ["Priority Matching System", "Automated Lead Management", "Trust & Compliance Filters"],
     category: "B2B",
-    image: "https://go.bcp.global/assets/BCPAI-B-9GI-Rt.png"
+    image: bcp
   },
   {
     title: "AIFA",
     description: "Automates financial processes, enhances accuracy, and provides real-time insights for smarter decision-making.",
     features: ["Automated Bookkeeping", "Financial Insights & Forecasting", "Compliance & Fraud Detection"],
     category: "Finance",
-    image: "https://www.springboard.com/blog/wp-content/uploads/2021/10/shutterstock_1053717473-scaled.jpg"
+    image: aifa
   },
   {
     title: "FutureBox",
     description: "Enhances efficiency through intelligent search, chatbot automation, and business support tools.",
     features: ["AI-powered Search & Retrieval", "Smart Chatbot FAQ", "Business Support System"],
     category: "B2B",
-    image: "https://futurebox.vitalify.asia/images/hero_icon.svg"
+    image: fb
   },
   {
     title: "NikoNiko",
     description: "AI-powered HR tool that tracks employee moods and engagement for better team management.",
     features: ["Mood Tracking", "Engagement Reports", "Team Analytics"],
     category: "Vision",
-    image: "https://assets.st-note.com/img/1718853515506-fGEaX9U85w.png?width=800"
+    image: niko
   },
   {
     title: "Viki",
@@ -55,7 +59,7 @@ const aiAgents = [
     description: "Connext is an AI-powered customer engagement platform ultilizing conversational workflow agents to offer businesses with hightly effective conversations with their customers.",
     features: ["AI-powered CRM", "Internal/External communication", "Virtual assistants"],
     category: "Platform",
-    image: "/src/pages/product/connext.png"
+    image: connext
   }
 ];
 
