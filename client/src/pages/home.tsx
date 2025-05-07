@@ -61,7 +61,7 @@ export default function Home() {
       <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 relative overflow-hidden">
         {/* Gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-purple-500/10 to-blue-600/20" />
-        
+
         {/* Animated pattern overlay */}
         <div className="absolute inset-0 opacity-20" 
           style={{
@@ -71,7 +71,7 @@ export default function Home() {
         />
 
         {/* Content */}
-        <div className="relative mx-auto max-w-7xl px-4 md:px-6">
+        <div className="relative mx-auto px-4 md:px-6">
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -97,6 +97,7 @@ export default function Home() {
               </Link>
             </div>
           </motion.div>
+          </div>
         </div>
       </section>
 
@@ -382,7 +383,7 @@ export default function Home() {
           />
         </div>
 
-        <div className="mx-auto max-w-7xl px-4 md:px-6 relative z-20">
+        <div className="mx-auto px-4 md:px-6 relative z-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
