@@ -58,12 +58,12 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 relative overflow-hidden">
+      <section className="relative w-full py-12 md:py-24 lg:py-32 xl:py-48 overflow-hidden">
         {/* Gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-purple-500/10 to-blue-600/20" />
+        <div className="absolute inset-0 w-screen bg-gradient-to-br from-primary/20 via-purple-500/10 to-blue-600/20" />
         
         {/* Animated pattern overlay */}
-        <div className="absolute inset-0 opacity-20" 
+        <div className="absolute inset-0 w-screen opacity-20" 
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
             animation: 'slide 20s linear infinite'
