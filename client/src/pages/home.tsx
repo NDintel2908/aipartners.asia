@@ -58,8 +58,8 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-background">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
+      <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-br from-blue-500 to-purple-500"> {/* Added AI-themed gradient */}
+        <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-6">
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
