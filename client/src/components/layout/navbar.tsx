@@ -27,22 +27,29 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
         <div className="mr-4 hidden md:flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <img src={logo} alt="Logo" className="h-8 w-auto" />
+            <img src={logo} alt="Logo" className="h-10 w-auto" />
           </Link>
-          <nav className="flex items-center space-x-6 text-sm font-medium text-black">
+          <nav className="flex items-center space-x-6 text-sm text-gray-600">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "transition-colors hover:text-gray-700",
-                  location === item.href ? "text-black font-bold" : "text-black"
+                  "transition-all duration-200 hover:text-black hover:scale-105",
+                  location === item.href ? "text-black font-semibold" : ""
                 )}
               >
                 {item.label}
               </Link>
             ))}
           </nav>
+          <div className="hidden md:block ml-6">
+            <Link href="/contact">
+              <Button variant="default" className="shadow-sm hover:shadow-md transition-shadow">
+                Contact Us
+              </Button>
+            </Link>
+          </div>
         </div>
 
         <Sheet open={open} onOpenChange={setOpen}>
