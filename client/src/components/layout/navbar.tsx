@@ -25,25 +25,27 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-white/90 backdrop-blur-lg supports-[backdrop-filter]:bg-white/80">
       <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
-        <div className="mr-4 hidden md:flex">
-          <Link href="/" className="mr-6 flex items-center space-x-2">
-            <img src={logo} alt="Logo" className="h-10 w-auto" />
-          </Link>
-          <nav className="flex items-center space-x-6 text-sm text-gray-600">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  "transition-all duration-200 hover:text-black hover:scale-105",
-                  location === item.href ? "text-black font-semibold" : ""
-                )}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-          <div className="hidden md:block ml-6">
+        <div className="flex-1 flex items-center">
+          <div className="flex items-center">
+            <Link href="/" className="mr-6 flex items-center space-x-2">
+              <img src={logo} alt="Logo" className="h-10 w-auto" />
+            </Link>
+            <nav className="hidden md:flex items-center space-x-6 text-sm text-gray-600">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn(
+                    "transition-all duration-200 hover:text-black hover:scale-105",
+                    location === item.href ? "text-black font-semibold" : ""
+                  )}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+          <div className="hidden md:block ml-auto">
             <Link href="/contact">
               <Button variant="default" className="shadow-sm hover:shadow-md transition-shadow">
                 Contact Us
