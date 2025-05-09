@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -185,6 +184,7 @@ export default function Contact() {
               </Form>
             </div>
           </motion.div>
+          </div>
         </div>
       </section>
     </div>
