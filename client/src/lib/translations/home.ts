@@ -156,7 +156,7 @@ export const homeTranslations = {
         title: "ビジネスの変革準備はできていますか？",
         description: "当社の専門チームと共に、今日からAIトランスフォーメーションの旅を始めましょう。",
         buttonText: "お問い合わせ"
-      }
+      },
       getStarted: "はじめましょう",
 
       // Vision, Mission, Values Section
