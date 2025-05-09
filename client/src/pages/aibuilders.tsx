@@ -10,7 +10,7 @@ import logo3 from "./new_logo/3.png";
 import logo4 from "./new_logo/4.png";
 import logo5 from "./new_logo/5.png";
 import logo6 from "./new_logo/6.png";
-import { useLanguage } from "../contexts/LanguageContext";
+import { useLanguage } from "../lib/languageContext";
 
 const partnerCompanies = [
   { name: "Logo1", logo: logo1 },
