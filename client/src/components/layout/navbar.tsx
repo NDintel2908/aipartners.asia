@@ -84,9 +84,12 @@ export default function Navbar() {
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => setLanguage(language === 'en' ? 'ja' : 'en')}
+                onClick={() => {
+                  const { language, setLanguage } = useLanguage();
+                  setLanguage(language === 'en' ? 'ja' : 'en');
+                }}
               >
-                {language === 'en' ? '日本語' : 'English'}
+                {useLanguage().language === 'en' ? '日本語' : 'English'}
               </Button>
             </div>
           </div>
