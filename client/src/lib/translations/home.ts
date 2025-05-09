@@ -112,14 +112,17 @@ export const homeTranslations = {
         vision: "Vision",
         mission: "Mission",
         values: "Values"
-      }
-    },
-    ja: {
+      },
+      getStarted: "Get Started"
+    }
+  },
+  ja: {
+    home: {
       // Hero Section
       title: "APACにおけるワンストップAIトランスフォーメーション",
       subtitle: "透明な協力と包括的な人工知能専門知識を基盤としたプレミア戦略アライアンスです。私たちは、カスタム開発、ターゲットを絞ったトレーニングプログラム、熟練したAI人材の配置を含む、成功するAIトランスフォーメーションを提供することに特化しています。",
       getStarted: "始めましょう",
-
+      
       // Vision, Mission, Values Section
       vmv: {
         vision: "ビジョン",
