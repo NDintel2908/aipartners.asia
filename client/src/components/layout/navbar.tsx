@@ -25,6 +25,7 @@ const NavItems = () => {
 export default function Navbar() {
   const [location] = useLocation();
   const [open, setOpen] = useState(false);
+  const { language, setLanguage, getLangValue } = useLanguage();
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-white/90 backdrop-blur-lg supports-[backdrop-filter]:bg-white/80">
@@ -85,14 +86,14 @@ export default function Navbar() {
           <div className="w-full flex-1 md:w-auto md:flex-none">
             <div className="flex items-center space-x-2">
               {(() => {
-                const { language, setLanguage } = useLanguage();
                 return (
                   <Button
                     variant="ghost"
                     size="sm"
                     onClick={() => setLanguage(language === 'en' ? 'ja' : 'en')}
+                    className="min-w-[80px]"
                   >
-                    {language === 'en' ? '日本語' : 'English'}
+                    {getLangValue({ en: 'Japanese', ja: 'English' })}
                   </Button>
                 );
               })()}

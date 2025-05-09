@@ -6,6 +6,7 @@ type LanguageContextType = {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
+  getLangValue: <T extends { [key in Language]: any }>(obj: T, fallbackLang?: Language) => T[Language];
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -27,8 +28,12 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     return current;
   };
 
+  const getLangValue = <T extends { [key in Language]: any }>(obj: T, fallbackLang: Language = 'en'): T[Language] => {
+    return obj[language] || obj[fallbackLang];
+  };
+
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t, getLangValue }}>
       {children}
     </LanguageContext.Provider>
   );
