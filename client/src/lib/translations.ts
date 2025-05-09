@@ -8,6 +8,7 @@ import { aitrainersTranslations } from './translations/aitrainers';
 import { aiworkforceTranslations } from './translations/aiworkforce';
 import { aistoreTranslations } from './translations/aistore';
 import { contactTranslations } from './translations/contact';
+import { footerTranslations } from './translations/footer';
 
 export const translations = {
   en: {
@@ -18,6 +19,7 @@ export const translations = {
     ...aiworkforceTranslations.en,
     ...aistoreTranslations.en,
     ...contactTranslations.en,
+    ...footerTranslations.en,
   },
   ja: {
     ...navTranslations.ja,
@@ -27,5 +29,6 @@ export const translations = {
     ...aiworkforceTranslations.ja,
     ...aistoreTranslations.ja,
     ...contactTranslations.ja,
+    ...footerTranslations.ja,
   }
 };

@@ -1,16 +1,18 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/lib/languageContext";
 import { FaFacebook, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
+  const { t } = useLanguage();
   return (
     <footer className="bg-black text-white py-16 px-4 md:px-6 lg:px-8">
       <div className="grid gap-8 grid-cols-1 sm:grid-cols-3 max-w-7xl mx-auto">
         {/* Quick Links */}
         <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Quick Links</h3>
+          <h3 className="text-lg font-semibold">{t('footer.quickLinks')}</h3>
           <p className="text-sm text-muted-foreground">
-            Find what you're looking for quickly.
+            {t('footer.quickLinksDesc')}
           </p>
           <div className="space-y-2">
             <Link href="/" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
@@ -33,9 +35,9 @@ export default function Footer() {
 
         {/* Social Media */}
         <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Follow Us</h3>
+          <h3 className="text-lg font-semibold">{t('footer.followUs')}</h3>
           <p className="text-sm text-muted-foreground">
-            Connect with us on social media platforms.
+            {t('footer.followUsDesc')}
           </p>
           <div className="flex space-x-4">
             <a href="https://linkedin.com/company/ai-partners-asia" target="_blank" rel="noopener noreferrer"
@@ -51,14 +53,14 @@ export default function Footer() {
 
         {/* Newsletter */}
         <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Stay Updated</h3>
+          <h3 className="text-lg font-semibold">{t('footer.stayUpdated')}</h3>
           <p className="text-sm text-muted-foreground">
-            Subscribe to our newsletter for the latest AI news and updates.
+            {t('footer.stayUpdatedDesc')}
           </p>
           <div className="flex items-center gap-2">
             <input 
               type="email" 
-              placeholder="Enter your email"
+              placeholder={t('footer.emailPlaceholder')}
               className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
             />
             <Button size="sm">Subscribe</Button>
