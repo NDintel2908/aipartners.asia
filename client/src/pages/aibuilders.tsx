@@ -150,11 +150,9 @@ export default function AIBuilders() {
       <section className="py-20">
         <div className="w-full text-center">
           <h2 className="text-3xl font-bold mb-6">Ready to build cutting-edge AI solutions?</h2>
-          <Link href="/contact">
-            <Button size="lg" variant="secondary" className="mb-8">
-              Get Consultant Now
-            </Button>
-          </Link>
+          <Button size="lg" variant="secondary" className="mb-8">
+            Get Consultant Now
+          </Button>
           <p className="text-lg mb-6">
             AI innovators: Build the future with us!
           </p>
