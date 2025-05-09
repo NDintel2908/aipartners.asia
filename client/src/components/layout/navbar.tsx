@@ -11,20 +11,21 @@ import {
 import { useState } from "react";
 import { useLanguage } from "@/lib/languageContext";
 
-
-export default function Navbar() {
-  const [location] = useLocation();
-  const [open, setOpen] = useState(false);
-  const { language, setLanguage, getLangValue, t } = useLanguage();
-
-  const navItems = [
+const NavItems = () => {
+  const { t } = useLanguage();
+  return [
     { label: t('nav.home'), href: "/" },
     { label: t('nav.aiBuilders'), href: "/aibuilders" },
     { label: t('nav.aiTrainers'), href: "/ai-trainers" },
     { label: t('nav.aiWorkforce'), href: "/ai-workforce" },
     { label: t('nav.aiStore'), href: "/ai-store" },
   ];
+};
 
+export default function Navbar() {
+  const [location] = useLocation();
+  const [open, setOpen] = useState(false);
+  const { language, setLanguage, getLangValue } = useLanguage();
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-white/90 backdrop-blur-lg supports-[backdrop-filter]:bg-white/80">
@@ -34,7 +35,7 @@ export default function Navbar() {
             <img src={logo} alt="Logo" className="h-10 w-auto" />
           </Link>
           <nav className="flex items-center space-x-6 text-sm text-gray-600">
-            {navItems.map((item) => (
+            {NavItems().map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -64,7 +65,7 @@ export default function Navbar() {
           </SheetTrigger>
           <SheetContent side="left" className="bg-background">
             <div className="flex flex-col space-y-4 mt-8 text-foreground">
-              {navItems.map((item) => (
+              {NavItems().map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
