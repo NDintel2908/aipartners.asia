@@ -81,16 +81,18 @@ export default function Navbar() {
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
           <div className="w-full flex-1 md:w-auto md:flex-none">
             <div className="flex items-center space-x-2">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => {
-                  const { language, setLanguage } = useLanguage();
-                  setLanguage(language === 'en' ? 'ja' : 'en');
-                }}
-              >
-                {useLanguage().language === 'en' ? '日本語' : 'English'}
-              </Button>
+              {(() => {
+                const { language, setLanguage } = useLanguage();
+                return (
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => setLanguage(language === 'en' ? 'ja' : 'en')}
+                  >
+                    {language === 'en' ? '日本語' : 'English'}
+                  </Button>
+                );
+              })()}
             </div>
           </div>
         </div>
