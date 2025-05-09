@@ -10,6 +10,7 @@ import logo3 from "./new_logo/3.png";
 import logo4 from "./new_logo/4.png";
 import logo5 from "./new_logo/5.png";
 import logo6 from "./new_logo/6.png";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const partnerCompanies = [
   { name: "Logo1", logo: logo1 },
@@ -67,6 +68,7 @@ const applications = [
 
 
 export default function AIBuilders() {
+  const { t } = useLanguage();
   const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const controls = useAnimation();
@@ -81,10 +83,10 @@ export default function AIBuilders() {
         className="flex flex-col items-center space-y-4 text-center mb-8"
       >
         <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-          AI Development Services and Solutions
+          {t('aibuilders.title')}
         </h1>
         <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400 mb-8">
-          A multinational alliance with highly capable technology development teams excels in AI development and AI transformation across diverse business sector.
+          {t('aibuilders.subtitle')}
         </p>
       </motion.div>
 
@@ -116,7 +118,7 @@ export default function AIBuilders() {
           </div>
         </div>
       </motion.div>
-      
+
       {/* Applications Section */}
       <h2 className="text-4xl font-bold mt-12 mb-8 text-center w-full">Applications</h2>
       <div className="grid gap-6 md:grid-cols-2">
@@ -144,7 +146,7 @@ export default function AIBuilders() {
         ))}
       </div>
 
-      
+
 
       {/* Contact Box */}
       <section className="py-20">
