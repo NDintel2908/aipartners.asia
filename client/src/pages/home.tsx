@@ -61,7 +61,7 @@ export default function Home() {
       <section className="relative w-full py-12 md:py-24 lg:py-32 xl:py-48 overflow-hidden">
         {/* Gradient background */}
         <div className="absolute inset-0 w-screen bg-gradient-to-br from-primary/20 via-purple-500/10 to-blue-600/20 -z-20" />
-        
+
         {/* Animated pattern overlay */}
         <div className="absolute inset-0 w-screen opacity-20 -z-10" 
           style={{
@@ -101,7 +101,7 @@ export default function Home() {
       </section>
 
       {/* Vision, Mission, Values Section */}
-      <section className="w-full py-12 md:py-24 bg-muted">
+      <section className="w-full py-12 md:py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="grid gap-6 lg:grid-cols-3">
             <motion.div
