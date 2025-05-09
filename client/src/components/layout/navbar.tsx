@@ -64,7 +64,7 @@ export default function Navbar() {
           </SheetTrigger>
           <SheetContent side="left" className="bg-background">
             <div className="flex flex-col space-y-4 mt-8 text-foreground">
-              {navItems.map((item) => (
+              {NavItems().map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
