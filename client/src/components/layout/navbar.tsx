@@ -9,6 +9,8 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { useState } from "react";
+import { useLanguage } from "@/lib/languageContext";
+import { Button } from "@/components/ui/button";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -78,7 +80,17 @@ export default function Navbar() {
         </Sheet>
 
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-          <div className="w-full flex-1 md:w-auto md:flex-none"></div>
+          <div className="w-full flex-1 md:w-auto md:flex-none">
+            <div className="flex items-center space-x-2">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setLanguage(language === 'en' ? 'ja' : 'en')}
+              >
+                {language === 'en' ? '日本語' : 'English'}
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
