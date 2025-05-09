@@ -49,8 +49,7 @@ export default function Contact() {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative w-full py-12 md:py-24">
-        <div className="absolute inset-0 w-screen bg-gradient-to-br from-primary/20 via-purple-500/10 to-blue-600/20" />
-        <div className="container relative z-10">
+        <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -117,7 +116,7 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="max-w-2xl mx-auto"
           >
-            <div className="bg-card p-8 rounded-lg shadow-lg">
+            <div className="p-8">
               <h2 className="text-2xl font-bold mb-6 text-center">Send us a Message</h2>
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
