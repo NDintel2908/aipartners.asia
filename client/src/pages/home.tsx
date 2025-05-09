@@ -56,6 +56,8 @@ const services = [
 ];
 
 export default function Home() {
+  const { t } = useLanguage();
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -83,11 +85,11 @@ export default function Home() {
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
               AIPartners.asia:{" "}
               <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
-                One-stop Winning AI Transformation station in APAC
+                {t('home.title')}
               </span>
             </h1>
             <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-              We are a premier strategic alliance founded on principles of transparent collaboration and comprehensive artificial intelligence expertise. We specialize in delivering successful AI transformation, encompassing bespoke development, targeted training programs, and the deployment of a proficient AI Workforce.
+              {t('home.subtitle')}
             </p>
             <div className="space-x-4">
               <Link href="/contact">
