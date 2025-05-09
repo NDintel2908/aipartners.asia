@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -14,10 +15,12 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Invalid email address"),
+  subject: z.string().min(5, "Subject must be at least 5 characters"),
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
 
@@ -28,6 +31,7 @@ export default function Contact() {
     defaultValues: {
       name: "",
       email: "",
+      subject: "",
       message: "",
     },
   });
@@ -42,78 +46,148 @@ export default function Contact() {
   }
 
   return (
-    <div className="container py-12 px-4 md:px-6">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="flex flex-col items-center space-y-4 text-center mb-12"
-      >
-        <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-          Get in Touch
-        </h1>
-        <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-          Have questions about AI? Want to learn more? Send us a message!
-        </p>
-      </motion.div>
+    <div className="min-h-screen bg-background">
+      {/* Hero Section */}
+      <section className="relative w-full py-12 md:py-24">
+        <div className="absolute inset-0 w-screen bg-gradient-to-br from-primary/20 via-purple-500/10 to-blue-600/20" />
+        <div className="container relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col items-center space-y-4 text-center"
+          >
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              Get in Touch
+            </h1>
+            <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+              Have questions about AI solutions? Want to explore collaboration opportunities? 
+              We're here to help!
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="max-w-md mx-auto"
-      >
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Name</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Your name" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Email</FormLabel>
-                  <FormControl>
-                    <Input placeholder="your@email.com" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="message"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Message</FormLabel>
-                  <FormControl>
-                    <Textarea
-                      placeholder="Your message"
-                      className="min-h-[120px]"
-                      {...field}
+      {/* Contact Information */}
+      <section className="py-12">
+        <div className="container">
+          <div className="grid gap-8 md:grid-cols-3">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="flex flex-col items-center p-6 text-center rounded-lg bg-card"
+            >
+              <Mail className="h-10 w-10 text-primary mb-4" />
+              <h3 className="font-semibold mb-2">Email</h3>
+              <p className="text-muted-foreground">info@aipartners.asia</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex flex-col items-center p-6 text-center rounded-lg bg-card"
+            >
+              <Phone className="h-10 w-10 text-primary mb-4" />
+              <h3 className="font-semibold mb-2">Phone</h3>
+              <p className="text-muted-foreground">+84 123 456 789</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="flex flex-col items-center p-6 text-center rounded-lg bg-card"
+            >
+              <MapPin className="h-10 w-10 text-primary mb-4" />
+              <h3 className="font-semibold mb-2">Location</h3>
+              <p className="text-muted-foreground">Ho Chi Minh City, Vietnam</p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form */}
+      <section className="py-12 bg-muted">
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="max-w-2xl mx-auto"
+          >
+            <div className="bg-card p-8 rounded-lg shadow-lg">
+              <h2 className="text-2xl font-bold mb-6 text-center">Send us a Message</h2>
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                  <div className="grid gap-6 md:grid-cols-2">
+                    <FormField
+                      control={form.control}
+                      name="name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Name</FormLabel>
+                          <FormControl>
+                            <Input placeholder="Your name" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
                     />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <Button type="submit" className="w-full">
-              Send Message
-            </Button>
-          </form>
-        </Form>
-      </motion.div>
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Email</FormLabel>
+                          <FormControl>
+                            <Input placeholder="your@email.com" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+                  <FormField
+                    control={form.control}
+                    name="subject"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Subject</FormLabel>
+                        <FormControl>
+                          <Input placeholder="What is this regarding?" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Message</FormLabel>
+                        <FormControl>
+                          <Textarea
+                            placeholder="Your message"
+                            className="min-h-[120px]"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <Button type="submit" className="w-full">
+                    Send Message
+                  </Button>
+                </form>
+              </Form>
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 }
