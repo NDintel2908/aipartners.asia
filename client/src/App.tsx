@@ -14,6 +14,7 @@ import AIBuilders from "./pages/aibuilders";
 import AITrainers from "./pages/ai-trainers";
 import AIWorkforce from "./pages/ai-workforce";
 import AIStore from "./pages/ai-store";
+import Contact from "./pages/contact";
 
 function Router() {
   return (
@@ -27,6 +28,7 @@ function Router() {
             <Route path="/ai-trainers" component={AITrainers} />
             <Route path="/ai-workforce" component={AIWorkforce} />
             <Route path="/ai-store" component={AIStore} />
+            <Route path="/contact" component={Contact} />
             <Route component={NotFound} />
           </Switch>
         </Layout>
