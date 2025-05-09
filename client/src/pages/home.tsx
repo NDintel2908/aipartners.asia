@@ -83,7 +83,7 @@ export default function Home() {
             className="flex flex-col items-center space-y-4 text-center"
           >
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-              AIPartners.asia:{" "}
+              
               <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
                 {t('home.title')}
               </span>
@@ -196,9 +196,9 @@ export default function Home() {
             className="space-y-8"
           >
             <div className="text-center">
-              <h2 className="text-3xl font-bold">Our Team</h2>
+              <h2 className="text-3xl font-bold">{t('home.team.title')}</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto mt-4">
-                Our expert team consists of AI specialists, developers, and researchers who are passionate about AI innovation. We bring together diverse expertise in machine learning, deep learning, computer vision, and natural language processing to deliver comprehensive AI solutions.
+                {t('home.team.description')}
               </p>
             </div>
 
