@@ -11,13 +11,16 @@ import {
 import { useState } from "react";
 import { useLanguage } from "@/lib/languageContext";
 
-const navItems = [
-  { label: "Home", href: "/" },
-  { label: "AI Builders", href: "/aibuilders" },
-  { label: "AI Trainers", href: "/ai-trainers" },
-  { label: "AI Workforce", href: "/ai-workforce" },
-  { label: "AI Agents Market", href: "/ai-store" },
-];
+const NavItems = () => {
+  const { t } = useLanguage();
+  return [
+    { label: t('nav.home'), href: "/" },
+    { label: t('nav.aiBuilders'), href: "/aibuilders" },
+    { label: t('nav.aiTrainers'), href: "/ai-trainers" },
+    { label: t('nav.aiWorkforce'), href: "/ai-workforce" },
+    { label: t('nav.aiStore'), href: "/ai-store" },
+  ];
+};
 
 export default function Navbar() {
   const [location] = useLocation();
@@ -31,7 +34,7 @@ export default function Navbar() {
             <img src={logo} alt="Logo" className="h-10 w-auto" />
           </Link>
           <nav className="flex items-center space-x-6 text-sm text-gray-600">
-            {navItems.map((item) => (
+            {NavItems().map((item) => (
               <Link
                 key={item.href}
                 href={item.href}

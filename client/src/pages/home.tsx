@@ -30,6 +30,7 @@ import {
   TabsList,
   TabsTrigger,
 } from "../components/ui/tabs";
+import { useLanguage } from '../contexts/LanguageContext';
 
 const services = [
   {
