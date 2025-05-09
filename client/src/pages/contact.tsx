@@ -16,6 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { useLanguage } from "@/lib/languageContext";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
