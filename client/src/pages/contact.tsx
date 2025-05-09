@@ -64,6 +64,8 @@ export default function Contact() {
     }
   }
 
+  const { t } = useLanguage();
+  
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -76,11 +78,10 @@ export default function Contact() {
             className="flex flex-col items-center space-y-4 text-center"
           >
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              Get in Touch
+              {t('contact.title')}
             </h1>
             <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-              Have questions about AI solutions? Want to explore collaboration opportunities? 
-              We're here to help!
+              {t('contact.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -97,8 +98,8 @@ export default function Contact() {
               className="flex flex-col items-center p-6 text-center rounded-lg bg-card"
             >
               <Mail className="h-10 w-10 text-primary mb-4" />
-              <h3 className="font-semibold mb-2">Email</h3>
-              <p className="text-muted-foreground">info@aipartners.asia</p>
+              <h3 className="font-semibold mb-2">{t('contact.contactInfo.emailTitle')}</h3>
+              <p className="text-muted-foreground">{t('contact.contactInfo.emailValue')}</p>
             </motion.div>
 
             <motion.div
@@ -108,8 +109,8 @@ export default function Contact() {
               className="flex flex-col items-center p-6 text-center rounded-lg bg-card"
             >
               <Phone className="h-10 w-10 text-primary mb-4" />
-              <h3 className="font-semibold mb-2">Phone</h3>
-              <p className="text-muted-foreground">+84 123 456 789</p>
+              <h3 className="font-semibold mb-2">{t('contact.contactInfo.phoneTitle')}</h3>
+              <p className="text-muted-foreground">{t('contact.contactInfo.phoneValue')}</p>
             </motion.div>
 
             <motion.div
@@ -119,8 +120,8 @@ export default function Contact() {
               className="flex flex-col items-center p-6 text-center rounded-lg bg-card"
             >
               <MapPin className="h-10 w-10 text-primary mb-4" />
-              <h3 className="font-semibold mb-2">Location</h3>
-              <p className="text-muted-foreground">Ho Chi Minh City, Vietnam</p>
+              <h3 className="font-semibold mb-2">{t('contact.contactInfo.locationTitle')}</h3>
+              <p className="text-muted-foreground">{t('contact.contactInfo.locationValue')}</p>
             </motion.div>
           </div>
         </div>
@@ -136,7 +137,7 @@ export default function Contact() {
             className="max-w-2xl mx-auto"
           >
             <div className="p-8">
-              <h2 className="text-2xl font-bold mb-6 text-center">Send us a Message</h2>
+              <h2 className="text-2xl font-bold mb-6 text-center">{t('contact.form.sectionTitle')}</h2>
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid gap-6 md:grid-cols-2">
@@ -145,9 +146,9 @@ export default function Contact() {
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Name</FormLabel>
+                          <FormLabel>{t('contact.form.nameLabel')}</FormLabel>
                           <FormControl>
-                            <Input placeholder="Your name" {...field} />
+                            <Input placeholder={t('contact.form.nameplaceholder')} {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -158,9 +159,9 @@ export default function Contact() {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Email</FormLabel>
+                          <FormLabel>{t('contact.form.emailLabel')}</FormLabel>
                           <FormControl>
-                            <Input placeholder="your@email.com" {...field} />
+                            <Input placeholder={t('contact.form.emailPlaceholder')} {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -172,9 +173,9 @@ export default function Contact() {
                     name="subject"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Subject</FormLabel>
+                        <FormLabel>{t('contact.form.subjectLabel')}</FormLabel>
                         <FormControl>
-                          <Input placeholder="What is this regarding?" {...field} />
+                          <Input placeholder={t('contact.form.subjectPlaceholder')} {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -185,10 +186,10 @@ export default function Contact() {
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Message</FormLabel>
+                        <FormLabel>{t('contact.form.messageLabel')}</FormLabel>
                         <FormControl>
                           <Textarea
-                            placeholder="Your message"
+                            placeholder={t('contact.form.messagePlaceholder')}
                             className="min-h-[120px]"
                             {...field}
                           />
@@ -198,7 +199,7 @@ export default function Contact() {
                     )}
                   />
                   <Button type="submit" className="w-full">
-                    Send Message
+                    {t('contact.form.submitButton')}
                   </Button>
                 </form>
               </Form>
