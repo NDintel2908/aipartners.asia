@@ -83,7 +83,7 @@ export default function Home() {
             className="flex flex-col items-center space-y-4 text-center"
           >
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-              
+
               <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
                 {t('home.title')}
               </span>
@@ -94,7 +94,7 @@ export default function Home() {
             <div className="space-x-4">
               <Link href="/contact">
                 <Button size="lg">
-                  Get Started
+                  {t('home.getStarted')}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>

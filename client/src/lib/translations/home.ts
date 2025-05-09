@@ -88,7 +88,32 @@ export const homeTranslations = {
         title: "Ready to Transform Your Business?",
         description: "Start your AI transformation journey today with our expert team.",
         buttonText: "Contact Us"
-      }
+      },
+      services: {
+        title: "Our Business Units",
+        aiBuilders: {
+          title: "AI Builders",
+          description: "Expert development teams crafting custom AI solutions tailored to your needs"
+        },
+        aiTrainers: {
+          title: "AI Trainers", 
+          description: "Specialized training services to optimize your AI models and systems"
+        },
+        aiWorkforce: {
+          title: "AI Workforce",
+          description: "Professional AI teams ready to enhance your operations"
+        },
+        aiStore: {
+          title: "AI Store",
+          description: "Marketplace for ready-to-use AI agents and solutions"
+        }
+      },
+      vmv: {
+        vision: "Vision",
+        mission: "Mission",
+        values: "Values"
+      },
+      getStarted: "Get Started"
     }
   },
   ja: {
@@ -96,6 +121,42 @@ export const homeTranslations = {
       // Hero Section
       title: "APACにおけるワンストップAIトランスフォーメーション",
       subtitle: "透明な協力と包括的な人工知能専門知識を基盤としたプレミア戦略アライアンスです。私たちは、カスタム開発、ターゲットを絞ったトレーニングプログラム、熟練したAI人材の配置を含む、成功するAIトランスフォーメーションを提供することに特化しています。",
+      getStarted: "始めましょう",
+      
+      // Vision, Mission, Values Section
+      vmv: {
+        vision: "ビジョン",
+        mission: "ミッション",
+        values: "バリュー"
+      },
+
+      // Services Section
+      services: {
+        title: "事業部門",
+        aiBuilders: {
+          title: "AIビルダー",
+          description: "お客様のニーズに合わせたカスタムAIソリューションを提供する専門開発チーム"
+        },
+        aiTrainers: {
+          title: "AIトレーナー",
+          description: "AIモデルとシステムを最適化するための専門トレーニングサービス"
+        },
+        aiWorkforce: {
+          title: "AI人材",
+          description: "お客様の業務を強化する準備ができているプロフェッショナルなAIチーム"
+        },
+        aiStore: {
+          title: "AIストア",
+          description: "すぐに使えるAIエージェントとソリューションのマーケットプレイス"
+        }
+      },
+
+      // CTA Section
+      cta: {
+        title: "ビジネスの変革準備はできていますか？",
+        description: "当社の専門チームと共に、今日からAIトランスフォーメーションの旅を始めましょう。",
+        buttonText: "お問い合わせ"
+      }
       getStarted: "はじめましょう",
 
       // Vision, Mission, Values Section
