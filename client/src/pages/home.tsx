@@ -247,7 +247,7 @@ export default function Home() {
                     {[
                       { name: "Harold Duong", role: "Program Director", imgSrc: Harold },
                       { name: "Tan Mai", role: "Head of Business", imgSrc: Tan },
-                      { name: "Huong Le", role: "Head of Training", imgSrc: Huong },
+                      
                       { name: "Huynh Nguyen", role: "Head of Marketing", imgSrc: Chloe }
                     ].map((member, index) => (
                       <div key={index} className="flex flex-col items-center">
@@ -290,12 +290,12 @@ export default function Home() {
                 <TabsContent value="consulting" className="mt-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {[
-                      { name: "Dung Le", role: "Business", imgSrc: "https://play-lh.googleusercontent.com/7Ak4Ye7wNUtheIvSKnVgGL_OIZWjGPZNV6TP_3XLxHC-sDHLSE45aDg41dFNmL5COA" },
+                      
                       { name: "Hien Ha", role: "AI Technology", imgSrc: Hien },
                       { name: "Quang Nguyen", role: "AI Technology", imgSrc: Quang },
                       { name: "Tuan Nguyen", role: "AI Solutions", imgSrc: "https://tse4.mm.bing.net/th?id=OIP.zeeoSeLcH19kuQ1ABNOGCwHaHU&pid=Api&P=0&h=180" },
                       { name: "Long Nguyen", role: "Data Solutions", imgSrc: Long },
-                      { name: "Vinh Nguyen", role: "AI Solutions", imgSrc: Vinh },
+                      
                       { name: "Trung BB", role: "AI Technology", imgSrc: TrungBB }
                     ].map((member, index) => (
                       <div key={index} className="flex flex-col items-center">
