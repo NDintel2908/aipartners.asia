@@ -8,16 +8,6 @@ import Long from "./member/Long.png";
 
 const members = [
   {
-    name: "Mike Nguyen",
-    role: "Market Manager (US)",
-    image: Mike,
-  },
-  {
-    name: "Huong Le",
-    role: "Leading AI recruitment firm",
-    image: Huong,
-  },
-  {
     name: "Long Nguyen",
     role: "Market Manager (VN)",
     image: Long,
@@ -65,6 +55,7 @@ export default function AIWorkforce() {
         </motion.div>
       </section>
 
+      {/* Our Members section - temporarily hidden
       <section className="py-20">
         <div className="container">
           <h2 className="text-3xl font-bold mb-10 text-center">Our Members</h2>
@@ -94,6 +85,7 @@ export default function AIWorkforce() {
           </div>
         </div>
       </section>
+      */}
 
       <section className="py-20">
         <div className="w-full">
@@ -137,7 +129,7 @@ export default function AIWorkforce() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">
             <a href="mailto:huong.le@aipartners.asia" className="flex items-center gap-2 hover:underline">
               <Mail className="h-5 w-5" />
-              huong.le@aipartners.asia
+              tan.mai@aipartners.asia
             </a>
           </div>
         </div>

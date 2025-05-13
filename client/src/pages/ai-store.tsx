@@ -26,13 +26,7 @@ const aiAgents = [
     category: "Finance",
     image: aifa
   },
-  {
-    title: "FutureBox",
-    description: "Enhances efficiency through intelligent search, chatbot automation, and business support tools.",
-    features: ["AI-powered Search & Retrieval", "Smart Chatbot FAQ", "Business Support System"],
-    category: "B2B",
-    image: fb
-  },
+  
   {
     title: "NikoNiko",
     description: "AI-powered HR tool that tracks employee moods and engagement for better team management.",
