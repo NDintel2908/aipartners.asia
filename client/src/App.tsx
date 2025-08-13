@@ -4,6 +4,7 @@ import { queryClient } from "./lib/queryClient";
 import { Toaster } from "./components/ui/toaster";
 import { Link } from "wouter";
 import { LanguageProvider } from "./lib/languageContext";
+import { isMaintenanceMode } from "./lib/maintenance";
 
 // Page imports
 import NotFound from "./pages/not-found";
@@ -16,8 +17,14 @@ import AITrainers from "./pages/ai-trainers";
 import AIWorkforce from "./pages/ai-workforce";
 import AIStore from "./pages/ai-store";
 import Contact from "./pages/contact";
+import Maintenance from "./pages/maintenance";
 
 function Router() {
+  // Show maintenance page if maintenance mode is enabled
+  if (isMaintenanceMode()) {
+    return <Maintenance />;
+  }
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
