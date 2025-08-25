@@ -23,6 +23,8 @@ import Ryuji from "./member/ryuji.jpg";
 import Nicky from "./member/nicky.png";
 import Trang from "./member/trang.png";
 import Tien from "./member/tien.jfif";
+import wichak from "./member/wichak.jfif";
+import Trung from "./member/Trung.jpg";
 import bg from "./background.mp4";
 
 import {
@@ -232,25 +234,16 @@ export default function Home() {
                       className="group relative px-6 py-3 rounded-none bg-transparent hover:bg-transparent data-[state=active]:bg-transparent data-[state=active]:shadow-none text-lg"
                     >
                       <span className="relative z-10 font-medium transition-colors duration-300 group-data-[state=active]:text-primary group-hover:text-primary/80">
-                        Business Consulting Team
+                        AI Business & Technologies Consulting Team
                       </span>
                       <span className="absolute bottom-0 left-0 h-1 w-full scale-x-0 rounded-full bg-primary transition-transform duration-300 group-data-[state=active]:scale-x-100"></span>
                       <span className="absolute -bottom-[1px] left-0 h-[2px] w-full scale-x-0 bg-background transition-transform duration-300 group-data-[state=active]:scale-x-100"></span>
                     </TabsTrigger>
-                    <TabsTrigger
-                      value="consulting"
-                      className="group relative px-6 py-3 rounded-none bg-transparent hover:bg-transparent data-[state=active]:bg-transparent data-[state=active]:shadow-none text-lg"
-                    >
-                      <span className="relative z-10 font-medium transition-colors duration-300 group-data-[state=active]:text-primary group-hover:text-primary/80">
-                       Technologies Consulting Team
-                      </span>
-                      <span className="absolute bottom-0 left-0 h-1 w-full scale-x-0 rounded-full bg-primary transition-transform duration-300 group-data-[state=active]:scale-x-100"></span>
-                      <span className="absolute -bottom-[1px] left-0 h-[2px] w-full scale-x-0 bg-background transition-transform duration-300 group-data-[state=active]:scale-x-100"></span>
-                    </TabsTrigger>
+                    
                   </TabsList>
                 </div>
 
-                {/* Operation Team - 4 members */}
+                {/* Management Team - 6 members */}
                 <TabsContent value="operation" className="mt-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {[
@@ -302,32 +295,70 @@ export default function Home() {
                   </div>
                 </TabsContent>
 
-                {/* Advisory Team - 5 members */}
+                {/* Advisory Team - 12 members */}
                 <TabsContent value="advisory" className="mt-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {[
                       {
                         name: "Ryuji Ishikawa",
-                        role: "Strategy Advisor",
+                        role: "AI in Strategy",
                         imgSrc: Ryuji,
                       },
                       {
-                        name: "Fumeo Seo",
-                        role: "Business Advisor",
+                        name: "Yutaka Horie",
+                        role: "Global Marketing",
+                        imgSrc: Horie,
+                      },
+                      {
+                        name: "Harold Duong",
+                        role: "AI in Strategy",
+                        imgSrc: Harold,
+                      },
+                      {
+                        name: "Nhu Tran",
+                        role: "AI in Operations & Manufacturing",
                         imgSrc: nhu,
                       },
                       {
-                        name: "Truong Chu",
-                        role: "Media Advisor",
-                        imgSrc:
-                          "https://tse4.mm.bing.net/th?id=OIP.zeeoSeLcH19kuQ1ABNOGCwHaHU&pid=Api&P=0&h=180",
+                        name: "Nguyen Lu",
+                        role: "AI in Banking & Finance",
+                        imgSrc: Nicky,
                       },
-                      { name: "Huu Pham", role: "Tech Advisor", imgSrc: Huu },
                       {
-                        name: "Yutaka Horie",
-                        role: "Marketing Advisor",
-                        imgSrc: Horie,
+                        name: "Long Nguyen",
+                        role: "AI in Data & Tech",
+                        imgSrc: Long,
                       },
+                      {
+                        name: "Hien Ha",
+                        role: "AI in Tech",
+                        imgSrc: Hien,
+                      },
+                      {
+                        name: "Wichak Chongudomlert",
+                        role: "AI in Sales & CRM",
+                        imgSrc: wichak,
+                      },
+                      {
+                        name: "Tuan Nguyen",
+                        role: "AI in Healthcare",
+                        imgSrc: "https://tse4.mm.bing.net/th?id=OIP.zeeoSeLcH19kuQ1ABNOGCwHaHU&pid=Api&P=0&h=180",
+                      },
+                      {
+                        name: "Huu Pham",
+                        role: "AI in IoT & Robotics",
+                        imgSrc: Huu,
+                      },
+                      {
+                        name: "Quang Nguyen",
+                        role: "AI in IoT & Tech",
+                        imgSrc: Quang,
+                      },
+                      {
+                        name: "Trung Dang",
+                        role: "AI in HR - L&D",
+                        imgSrc: Trung,
+                      }
                     ].map((member, index) => (
                       <div key={index} className="flex flex-col items-center">
                         <img
@@ -346,11 +377,12 @@ export default function Home() {
                   </div>
                 </TabsContent>
 
-                {/* Technologies & Business Consulting Team - 8 members */}
+                {/* Technologies Consulting Team - 8 members */}
                 <TabsContent value="consulting" className="mt-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {[
                       { name: "Hien Ha", role: "AI Technology", imgSrc: Hien },
+                      { name: "Huu Pham", role: "Tech Advisor", imgSrc: Huu },
                       {
                         name: "Quang Nguyen",
                         role: "AI Technology",

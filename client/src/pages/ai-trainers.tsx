@@ -174,7 +174,7 @@ export default function AITrainers() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">
             <a href="mailto:huong.le@aipartners.asia" className="flex items-center gap-2 hover:underline">
               <Mail className="h-5 w-5" />
-              tan.mai@aipartners.asia
+              trang.tran@aipartners.asia
             </a>
           </div>
         </div>
