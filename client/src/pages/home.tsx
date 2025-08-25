@@ -14,15 +14,15 @@ import Chloe from "./member/Chloe.jpg";
 import Harold from "./member/Harold.jpeg";
 import Hien from "./member/Hien.jpg";
 import Horie from "./member/Horie.jpg";
-import Huong from "./member/Huong.jpg";
 import Huu from "./member/Huu.jpg";
 import Long from "./member/Long.png";
 import Quang from "./member/Quang.png";
-import Ryuji from "./member/Ryuji.jpeg";
-import Seo from "./member/Seo.jpg";
-import Tan from "./member/Tan.jpeg";
 import TrungBB from "./member/TrungBB.png";
-import Vinh from "./member/Vinh.jpeg";
+import nhu from "./member/nhu.png";
+import Ryuji from "./member/ryuji.jpg";
+import Nicky from "./member/nicky.png";
+import Trang from "./member/trang.png";
+import Tien from "./member/tien.jfif";
 import bg from "./background.mp4";
 
 import {
@@ -222,7 +222,7 @@ export default function Home() {
                       className="group relative px-6 py-3 rounded-none bg-transparent hover:bg-transparent data-[state=active]:bg-transparent data-[state=active]:shadow-none text-lg"
                     >
                       <span className="relative z-10 font-medium transition-colors duration-300 group-data-[state=active]:text-primary group-hover:text-primary/80">
-                        Operation Team
+                        Management Team
                       </span>
                       <span className="absolute bottom-0 left-0 h-1 w-full scale-x-0 rounded-full bg-primary transition-transform duration-300 group-data-[state=active]:scale-x-100"></span>
                       <span className="absolute -bottom-[1px] left-0 h-[2px] w-full scale-x-0 bg-background transition-transform duration-300 group-data-[state=active]:scale-x-100"></span>
@@ -232,7 +232,7 @@ export default function Home() {
                       className="group relative px-6 py-3 rounded-none bg-transparent hover:bg-transparent data-[state=active]:bg-transparent data-[state=active]:shadow-none text-lg"
                     >
                       <span className="relative z-10 font-medium transition-colors duration-300 group-data-[state=active]:text-primary group-hover:text-primary/80">
-                        Advisory Team
+                        Business Consulting Team
                       </span>
                       <span className="absolute bottom-0 left-0 h-1 w-full scale-x-0 rounded-full bg-primary transition-transform duration-300 group-data-[state=active]:scale-x-100"></span>
                       <span className="absolute -bottom-[1px] left-0 h-[2px] w-full scale-x-0 bg-background transition-transform duration-300 group-data-[state=active]:scale-x-100"></span>
@@ -242,7 +242,7 @@ export default function Home() {
                       className="group relative px-6 py-3 rounded-none bg-transparent hover:bg-transparent data-[state=active]:bg-transparent data-[state=active]:shadow-none text-lg"
                     >
                       <span className="relative z-10 font-medium transition-colors duration-300 group-data-[state=active]:text-primary group-hover:text-primary/80">
-                        Consulting Team
+                       Technologies Consulting Team
                       </span>
                       <span className="absolute bottom-0 left-0 h-1 w-full scale-x-0 rounded-full bg-primary transition-transform duration-300 group-data-[state=active]:scale-x-100"></span>
                       <span className="absolute -bottom-[1px] left-0 h-[2px] w-full scale-x-0 bg-background transition-transform duration-300 group-data-[state=active]:scale-x-100"></span>
@@ -255,20 +255,34 @@ export default function Home() {
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {[
                       {
+                        name: "Nhu Tran",
+                        role: "General Director",
+                        imgSrc: nhu,
+                      },
+                      {
                         name: "Harold Duong",
-                        role: "Program Director",
+                        role: "Strategy Director",
                         imgSrc: Harold,
                       },
                       {
-                        name: "Tan Mai",
-                        role: "Head of Business",
-                        imgSrc: Tan,
+                        name: "Nicky Lu",
+                        role: "Business Director & Trainer",
+                        imgSrc: Nicky,
                       },
-
                       {
-                        name: "Huynh Nguyen",
-                        role: "Head of Marketing",
-                        imgSrc: Chloe,
+                        name: "Long Nguyen",
+                        role: "Tech Director",
+                        imgSrc: Long,
+                      },
+                      {
+                        name: "Tien Tran",
+                        role: "Business Development Head",
+                        imgSrc: Tien,
+                      },
+                      {
+                        name: "Trang Tran",
+                        role: "Operation Head",
+                        imgSrc: Trang,
                       },
                     ].map((member, index) => (
                       <div key={index} className="flex flex-col items-center">
@@ -300,7 +314,7 @@ export default function Home() {
                       {
                         name: "Fumeo Seo",
                         role: "Business Advisor",
-                        imgSrc: Seo,
+                        imgSrc: nhu,
                       },
                       {
                         name: "Truong Chu",
