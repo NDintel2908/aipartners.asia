@@ -34,12 +34,12 @@ const courses = {
       level: "Beginner",
       focus: "Practical AI",
       domain: "Daily Life, Productivity",
-      modules: "2 modules (AI Tools, Examples)",
-      format: "Videos + Exercises",
+      modules: "4 modules (AI Tools, Examples)",
+      format: "Lectures + Exercises",
       audience: "General Public",
-      delivery: "Online, Interactive",
-      trainer: "Mike Nguyen",
-      duration: "2 weeks",
+      delivery: "Offline/Online, Interactive",
+      trainer: " ",
+      duration: "1 week",
     },
   ],
   tech: [
@@ -71,6 +71,24 @@ const courses = {
 };
 
 export default function AITrainers() {
+  const handleConsultantClick = () => {
+    const email = 'tien.tran@aipartners.asia';
+    const subject = encodeURIComponent('AI Training Consultation Request');
+    const body = encodeURIComponent('Dear Tien Tran,\n\nI am interested in learning more about your AI training programs. I would like to request a consultation to discuss:\n\n- Available courses and training options\n- Customized training solutions for my organization\n- Pricing and scheduling\n\nPlease let me know your availability for a consultation.\n\nBest regards,');
+
+    // Thử mở Gmail web trước
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
+
+    // Mở tab mới với Gmail
+    const newWindow = window.open(gmailUrl, '_blank');
+
+    // Fallback nếu popup bị block hoặc không mở được
+    if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+      // Fallback về mailto
+      window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+    }
+  };
+
   return (
     <div className="min-h-screen">
       <section className="py-20">
@@ -165,16 +183,21 @@ export default function AITrainers() {
       <section className="py-20">
         <div className="w-full text-center">
           <h2 className="text-3xl font-bold mb-6">Develop AI skills that make a real impact!</h2>
-          <Button size="lg" variant="secondary" className="mb-8">
+          <Button 
+            size="lg" 
+            variant="secondary" 
+            className="mb-8"
+            onClick={handleConsultantClick}
+          >
             Get Consultant Now
           </Button>
           <p className="text-lg mb-6">
             Talent headhunters: Expand your network with us!
           </p>
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-            <a href="mailto:huong.le@aipartners.asia" className="flex items-center gap-2 hover:underline">
+            <a href="mailto:tien.tran@aipartners.asia" className="flex items-center gap-2 hover:underline">
               <Mail className="h-5 w-5" />
-              trang.tran@aipartners.asia
+              tien.tran@aipartners.asia
             </a>
           </div>
         </div>
