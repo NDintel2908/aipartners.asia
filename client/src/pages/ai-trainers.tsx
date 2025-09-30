@@ -54,7 +54,7 @@ export default function AITrainers() {
     }
   };
 
-  const REG_FORM = "https://forms.gle/YiUcAECU9H4ThQRM6";
+  const REG_FORM = "https://docs.google.com/forms/d/1waayFcVC-0hRQMPe84dDHRnF92s3OugJs75I1FWphL0";
   const ZALO_GROUP = "https://zalo.me/g/tjbduk971";
 
   return (
