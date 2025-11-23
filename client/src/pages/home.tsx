@@ -22,6 +22,7 @@ import Ryuji from "./member/ryuji.jpg";
 import Nicky from "./member/nicky.png";
 import wichak from "./member/wichak.jfif";
 import Trung from "./member/Trung.jpg";
+import Dung from "./member/Dung.png";
 import bg from "./background.mp4";
 
 import {
@@ -259,6 +260,16 @@ export default function Home() {
                         name: "Long Nguyen",
                         role: "Tech Director",
                         imgSrc: Long,
+                      },
+                      {
+                        name: "Dung Bui",
+                        role: "Head of BD",
+                        imgSrc: Dung,
+                      },
+                      {
+                        name: "Chloe Nguyen",
+                        role: "Head of Marketing",
+                        imgSrc: Chloe,
                       },
                       
                     ].map((member, index) => (
