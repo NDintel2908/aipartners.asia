@@ -18,11 +18,8 @@ import Huu from "./member/Huu.jpg";
 import Long from "./member/Long.png";
 import Quang from "./member/Quang.png";
 import TrungBB from "./member/TrungBB.png";
-import nhu from "./member/nhu.png";
 import Ryuji from "./member/ryuji.jpg";
 import Nicky from "./member/nicky.png";
-import Trang from "./member/trang.png";
-import Tien from "./member/tien.jfif";
 import wichak from "./member/wichak.jfif";
 import Trung from "./member/Trung.jpg";
 import bg from "./background.mp4";
@@ -247,11 +244,7 @@ export default function Home() {
                 <TabsContent value="operation" className="mt-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {[
-                      {
-                        name: "Nhu Tran",
-                        role: "General Director",
-                        imgSrc: nhu,
-                      },
+                      
                       {
                         name: "Harold Duong",
                         role: "Strategy Director",
@@ -267,16 +260,7 @@ export default function Home() {
                         role: "Tech Director",
                         imgSrc: Long,
                       },
-                      {
-                        name: "Tien Tran",
-                        role: "Business Development Head",
-                        imgSrc: Tien,
-                      },
-                      {
-                        name: "Trang Tran",
-                        role: "Operation Head",
-                        imgSrc: Trang,
-                      },
+                      
                     ].map((member, index) => (
                       <div key={index} className="flex flex-col items-center">
                         <img
@@ -314,11 +298,7 @@ export default function Home() {
                         role: "AI in Strategy",
                         imgSrc: Harold,
                       },
-                      {
-                        name: "Nhu Tran",
-                        role: "AI in Operations & Manufacturing",
-                        imgSrc: nhu,
-                      },
+                     
                       {
                         name: "Nguyen Lu",
                         role: "AI in Banking & Finance",
