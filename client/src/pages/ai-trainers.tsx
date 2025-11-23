@@ -41,7 +41,7 @@ const BONUS_IMG = bonusImg;
 
 export default function AITrainers() {
   const handleConsultantClick = () => {
-    const email = "tien.tran@aipartners.asia";
+    const email = "info@aipartners.asia";
     const subject = encodeURIComponent("AI Training Consultation Request");
     const body = encodeURIComponent(
       "Dear Tien Tran,\n\nI am interested in learning more about your AI training programs. I would like to request a consultation to discuss:\n\n- Available courses and training options\n- Customized training solutions for my organization\n- Pricing and scheduling\n\nPlease let me know your availability for a consultation.\n\nBest regards,"

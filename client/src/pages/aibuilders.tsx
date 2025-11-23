@@ -161,7 +161,7 @@ export default function AIBuilders() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">
             <a href="mailto:huong.le@aipartners.asia" className="flex items-center gap-2 hover:underline">
               <Mail className="h-5 w-5" />
-              trang.tran@aipartners.asia
+              info@aipartners.asia
             </a>
           </div>
         </div>
