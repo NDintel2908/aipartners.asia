@@ -16,6 +16,7 @@ import AIBuilders from "./pages/aibuilders";
 import AITrainers from "./pages/ai-trainers";
 import AIWorkforce from "./pages/ai-workforce";
 import AIStore from "./pages/ai-store";
+import FactoryTour from "./pages/factory-tour";
 import Contact from "./pages/contact";
 import Maintenance from "./pages/maintenance";
 
