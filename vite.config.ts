@@ -52,15 +52,12 @@ export default defineConfig(async () => {
     },
     server: {
       strictPort: false,
-      host: true, // Cho phép tất cả IP kết nối
-      allowedHosts: [
-        "localhost",
-        "127.0.0.1",
-        "4081481a-2c8d-4085-afa2-5397e16dfc87-00-3t2bpscdladvd.sisko.replit.dev"
-      ], // Thêm host bị chặn vào danh sách cho phép
+      host: "0.0.0.0",
+      port: 5000,
+      allowedHosts: true,
       fs: {
-        strict: false, // Allow serving files from outside of project root
-        allow: [clientDir], // Explicitly allow the client directory
+        strict: false,
+        allow: [clientDir],
       },
       proxy: {
         '/api': {

@@ -9,10 +9,10 @@ run = ["sh", "-c", "npm run build && npm start"]
 
 [[ports]]
 localPort = 5000
-externalPort = 5000
+externalPort = 80
 
 [[ports]]
-localPort = 5001
+localPort = 5002
 externalPort = 3001
 
 [[ports]]
@@ -29,3 +29,27 @@ externalPort = 3002
 
 [agent]
 expertMode = true
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Start application"
+
+[[workflows.workflow]]
+name = "Start application"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "yarn run-servers"
+waitForPort = 5000
+
+[workflows.workflow.metadata]
+outputType = "webview"
