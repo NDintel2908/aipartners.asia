@@ -76,23 +76,9 @@ app.get('*', (req, res) => {
     serveStatic(app);
   }
 
-  // Update the port configuration to be more flexible
-  const PORT = process.env.PORT || 5000;
-  const serverInstance = app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-  }).on('error', (err: any) => {
-    if (err.code === 'EADDRINUSE') {
-      // If port is in use, try another one
-      const newPort = Number(PORT) + 1;
-      console.log(`Port ${PORT} is in use, attempting with port ${newPort}`);
-      process.env.PORT = String(newPort);
-      serverInstance.close();
-      // Restart the server with the new port
-      app.listen(newPort, () => {
-        console.log(`Server running on port ${newPort}`);
-      });
-    } else {
-      console.error('Server error:', err);
-    }
+  // Backend always runs on port 5001
+  const PORT = 5001;
+  app.listen(PORT, "0.0.0.0", () => {
+    log(`Server running on port ${PORT}`);
   });
 })();
