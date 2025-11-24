@@ -8,11 +8,11 @@ export const contactTranslations = {
       // Contact Information Section
       contactInfo: {
         emailTitle: "Email",
-        emailValue: "info@aipartners.asia",
+        emailValue: "huynh.nguyen@aipartners.asia",
         phoneTitle: "Phone",
-        phoneValue: "+84 123 456 789",
+        phoneValue: "+84 905 581 085",
         locationTitle: "Location",
-        locationValue: "Ho Chi Minh City, Vietnam"
+        locationValue: "224A Dien Bien Phu, Xuan Hoa Ward, HCMC, Vietnam"
       },
 
       // Contact Form Section
