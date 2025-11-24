@@ -237,7 +237,6 @@ export default function Home() {
                       <span className="absolute bottom-0 left-0 h-1 w-full scale-x-0 rounded-full bg-primary transition-transform duration-300 group-data-[state=active]:scale-x-100"></span>
                       <span className="absolute -bottom-[1px] left-0 h-[2px] w-full scale-x-0 bg-background transition-transform duration-300 group-data-[state=active]:scale-x-100"></span>
                     </TabsTrigger>
-                    
                   </TabsList>
                 </div>
 
@@ -245,7 +244,6 @@ export default function Home() {
                 <TabsContent value="operation" className="mt-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {[
-                      
                       {
                         name: "Harold Duong",
                         role: "Strategy Director",
@@ -271,7 +269,6 @@ export default function Home() {
                         role: "Head of Marketing",
                         imgSrc: Chloe,
                       },
-                      
                     ].map((member, index) => (
                       <div key={index} className="flex flex-col items-center">
                         <img
@@ -309,7 +306,7 @@ export default function Home() {
                         role: "AI in Strategy",
                         imgSrc: Harold,
                       },
-                     
+
                       {
                         name: "Nguyen Lu",
                         role: "AI in Banking & Finance",
@@ -333,7 +330,8 @@ export default function Home() {
                       {
                         name: "Tuan Nguyen",
                         role: "AI in Healthcare",
-                        imgSrc: "https://tse4.mm.bing.net/th?id=OIP.zeeoSeLcH19kuQ1ABNOGCwHaHU&pid=Api&P=0&h=180",
+                        imgSrc:
+                          "https://tse4.mm.bing.net/th?id=OIP.zeeoSeLcH19kuQ1ABNOGCwHaHU&pid=Api&P=0&h=180",
                       },
                       {
                         name: "Huu Pham",
@@ -349,7 +347,7 @@ export default function Home() {
                         name: "Trung Dang",
                         role: "AI in HR - L&D",
                         imgSrc: Trung,
-                      }
+                      },
                     ].map((member, index) => (
                       <div key={index} className="flex flex-col items-center">
                         <img

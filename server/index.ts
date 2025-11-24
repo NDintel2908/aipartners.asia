@@ -2,8 +2,8 @@ import express, { type Request, Response, NextFunction } from "express";
 import cors from "cors";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
-import path from 'path';
-import { fileURLToPath } from 'url';
+import path from "path";
+import { fileURLToPath } from "url";
 
 // Create the __dirname equivalent for ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -43,15 +43,15 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.static(path.join(__dirname, '../client')));
+app.use(express.static(path.join(__dirname, "../client")));
 
 // Add a catch-all route to serve the index.html for client-side routing
-app.get('*', (req, res) => {
+app.get("*", (req, res) => {
   // Exclude API routes from the catch-all
-  if (!req.path.startsWith('/api')) {
-    res.sendFile(path.join(__dirname, '../client/index.html'));
+  if (!req.path.startsWith("/api")) {
+    res.sendFile(path.join(__dirname, "../client/index.html"));
   } else {
-    res.status(404).send('API endpoint not found');
+    res.status(404).send("API endpoint not found");
   }
 });
 
@@ -76,23 +76,8 @@ app.get('*', (req, res) => {
     serveStatic(app);
   }
 
-  // Update the port configuration to be more flexible
-  const PORT = process.env.PORT || 5000;
-  const serverInstance = app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-  }).on('error', (err: any) => {
-    if (err.code === 'EADDRINUSE') {
-      // If port is in use, try another one
-      const newPort = Number(PORT) + 1;
-      console.log(`Port ${PORT} is in use, attempting with port ${newPort}`);
-      process.env.PORT = String(newPort);
-      serverInstance.close();
-      // Restart the server with the new port
-      app.listen(newPort, () => {
-        console.log(`Server running on port ${newPort}`);
-      });
-    } else {
-      console.error('Server error:', err);
-    }
+  const PORT = 5001;
+  app.listen(PORT, "0.0.0.0", () => {
+    log(`Server running on http://0.0.0.0:${PORT}`);
   });
 })();
