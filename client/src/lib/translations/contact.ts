@@ -12,7 +12,7 @@ export const contactTranslations = {
         phoneTitle: "Phone",
         phoneValue: "+84 905 581 085",
         locationTitle: "Location",
-        locationValue: "224A, Xuan Hoa Ward, HCMC, Vietnam"
+        locationValue: "224A Dien Bien Phu, Xuan Hoa Ward, HCMC, Vietnam"
       },
 
       // Contact Form Section
