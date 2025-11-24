@@ -10,6 +10,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 export default defineConfig(async () => {
+  const rootDir = path.resolve(__dirname);
+  const clientDir = path.resolve(rootDir, "client");
+
   const plugins = [
     react(),
     runtimeErrorOverlay(),
@@ -21,10 +24,6 @@ export default defineConfig(async () => {
     const { cartographer } = await import("@replit/vite-plugin-cartographer");
     plugins.push(cartographer());
   }
-
-  // Xác định các đường dẫn tuyệt đối
-  const rootDir = path.resolve(__dirname);
-  const clientDir = path.resolve(rootDir, "client");
 
   return {
     plugins,
@@ -61,7 +60,7 @@ export default defineConfig(async () => {
       },
       proxy: {
         '/api': {
-          target: 'http://localhost:5001',
+          target: 'http://localhost:3001',
           changeOrigin: true
         }
       }
