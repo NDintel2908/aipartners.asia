@@ -76,9 +76,23 @@ app.get('*', (req, res) => {
     serveStatic(app);
   }
 
-  // Backend runs on port 3001, frontend (Vite) runs on 5000
-  const PORT = process.env.PORT || 3001;
-  app.listen(PORT, () => {
-    log(`Server running on port ${PORT}`);
+  // Update the port configuration to be more flexible
+  const PORT = process.env.PORT || 5000;
+  const serverInstance = app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  }).on('error', (err: any) => {
+    if (err.code === 'EADDRINUSE') {
+      // If port is in use, try another one
+      const newPort = Number(PORT) + 1;
+      console.log(`Port ${PORT} is in use, attempting with port ${newPort}`);
+      process.env.PORT = String(newPort);
+      serverInstance.close();
+      // Restart the server with the new port
+      app.listen(newPort, () => {
+        console.log(`Server running on port ${newPort}`);
+      });
+    } else {
+      console.error('Server error:', err);
+    }
   });
 })();
