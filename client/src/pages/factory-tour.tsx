@@ -70,7 +70,7 @@ const CTAButton = ({
   };
 
   return (
-    <a href="https://form.typeform.com/to/yIi0Knkd" target="_blank" rel="noopener noreferrer">
+    <a href="https://7g5ufqou95q.typeform.com/to/qTiYjU0p" target="_blank" rel="noopener noreferrer">
       <Button className={` ${baseStyles} ${variants[variant]}`}>
         Đăng ký ngay
         <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
