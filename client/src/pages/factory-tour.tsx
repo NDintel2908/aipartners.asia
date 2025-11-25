@@ -1,5 +1,7 @@
 import { Button } from "../components/ui/button";
 import { motion } from "framer-motion";
+import factoryTourImage from "./course/factory-tour.jpg";
+
 import {
   ArrowRight,
   Factory,
@@ -396,7 +398,7 @@ export default function FactoryTour() {
               <div className="grid lg:grid-cols-2 gap-6 items-start">
                 <div className="rounded-3xl overflow-hidden border border-slate-200 shadow-sm">
                   <img
-                    src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1400&q=80"
+                    src={factoryTourImage}
                     alt="Nhà máy trong Factory Tour"
                     className="h-full w-full object-cover"
                   />
