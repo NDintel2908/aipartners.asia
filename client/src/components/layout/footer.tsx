@@ -139,7 +139,7 @@ export default function Footer() {
 
             {status === "success" && (
               <p className="text-sm text-emerald-600">
-                Đã gửi! Kiểm tra email của bạn.
+                Đã gửi thành công.
               </p>
             )}
             {status === "error" && (
