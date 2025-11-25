@@ -70,8 +70,8 @@ const CTAButton = ({
   };
 
   return (
-    <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
-      <Button className={`${baseStyles} ${variants[variant]}`}>
+    <a href="https://form.typeform.com/to/yIi0Knkd" target="_blank" rel="noopener noreferrer">
+      <Button className={` ${baseStyles} ${variants[variant]}`}>
         Đăng ký ngay
         <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
       </Button>
