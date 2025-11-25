@@ -2,6 +2,10 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/languageContext";
 import { FaFacebook, FaLinkedin } from "react-icons/fa";
+import { useState } from "react";
+const [email, setEmail] = useState("");
+const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -57,20 +61,39 @@ export default function Footer() {
         <p className="text-sm text-muted-foreground">{t("footer.stayUpdatedDesc")}</p>
 
         <form
-          action="https://formspree.io/f/xblyeeve" // thay bằng endpoint Formspree của bạn
-          method="POST"
+          onSubmit={async (e) => {
+            e.preventDefault();
+            try {
+              const formData = new FormData();
+              formData.append("email", email);
+              formData.append("_subject", "New subscriber");
+              await fetch("https://formspree.io/f/xblyeeve", { method: "POST", body: formData });
+              setEmail("");
+              setStatus("success");
+            } catch (err) {
+              setStatus("error");
+            }
+          }}
           className="flex items-center gap-2"
         >
           <input
             type="email"
             name="email"
             required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder={t("footer.emailPlaceholder")}
-            className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+            className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
           />
           <Button type="submit" size="sm">Subscribe</Button>
-          <input type="hidden" name="_subject" value="New Factory Tour subscriber" />
         </form>
+
+        {status === "success" && (
+          <p className="text-sm text-emerald-600">Đã gửi! Kiểm tra email của bạn.</p>
+        )}
+        {status === "error" && (
+          <p className="text-sm text-red-600">Gửi thất bại, vui lòng thử lại.</p>
+        )}
       </div>
 
 
