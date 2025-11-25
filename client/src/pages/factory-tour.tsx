@@ -79,7 +79,7 @@ const CTAButton = ({
   return (
     <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
       <Button className={`${baseStyles} ${variants[variant]}`}>
-        Dang Ky Ngay
+        Đăng ký ngay
         <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
       </Button>
     </a>
@@ -137,25 +137,25 @@ export default function FactoryTour() {
 
             {/* Main headline */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight">
-              Tu Slide Den{" "}
+              Từ slide đến{" "}
               <span className="bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
-                Nha May Thuc Te
+                Nhà máy thực tế
               </span>
             </h1>
 
             {/* Subheadline */}
             <p className="text-lg md:text-xl lg:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-              BCP AI Partners & Factory Tour 2025 — Ket noi truc tiep voi CEO
-              nha may, nhan tech leads that moi tuan, dong hanh trien khai du an
-              AI/IoT/Automation.
+              BCP AI Partners & Factory Tour 2025 — Kết nối trực tiếp với CEO
+              nhà máy, nhận tech leads thật mỗi tuần, đồng hành triển khai dự
+              án AI/IoT/Automation.
             </p>
 
             {/* Key benefits */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-10 text-white/70 text-sm md:text-base">
               {[
-                { icon: CheckCircle2, text: "25+ Nganh Nghe" },
-                { icon: CheckCircle2, text: "Tech Leads Hang Tuan" },
-                { icon: CheckCircle2, text: "Gap Truc Tiep CEO" },
+                { icon: CheckCircle2, text: "25+ ngành nghề" },
+                { icon: CheckCircle2, text: "Tech leads hằng tuần" },
+                { icon: CheckCircle2, text: "Gặp trực tiếp CEO" },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-2">
                   <item.icon className="h-5 w-5 text-green-400" />
@@ -173,7 +173,7 @@ export default function FactoryTour() {
             >
               <CTAButton variant="white" />
               <p className="text-white/50 text-sm mt-5">
-                Chi mat 3 phut dang ky • BCP lien he trong 3-5 ngay
+                Chỉ mất 3 phút đăng ký • BCP liên hệ trong 3–5 ngày
               </p>
             </motion.div>
           </motion.div>
@@ -204,13 +204,13 @@ export default function FactoryTour() {
             {/* Section header */}
             <div className="text-center space-y-5">
               <span className="inline-block px-4 py-1.5 bg-red-100 text-red-600 text-sm font-semibold rounded-full">
-                Van De
+                Vấn đề
               </span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900">
-                Tai Sao AI Gioi Van Kho Co Du An?
+                Tại sao AI giỏi vẫn khó có dự án?
               </h2>
               <p className="text-slate-600 max-w-2xl mx-auto text-lg">
-                Nhieu doi ngu AI/IoT xuat sac van dang gap nhung rao can nay:
+                Nhiều đội ngũ AI/IoT xuất sắc vẫn đang gặp những rào cản này:
               </p>
             </div>
 
@@ -219,33 +219,33 @@ export default function FactoryTour() {
               {[
                 {
                   icon: Users,
-                  title: "Khong Gap Duoc Nguoi Quyet Dinh",
-                  desc: "Chi dung lai o phong IT, khong tiep can CEO, Giam doc nha may",
+                  title: "Không gặp được người quyết định",
+                  desc: "Chỉ dừng lại ở phòng IT, không tiếp cận CEO, Giám đốc nhà máy",
                 },
                 {
                   icon: TrendingUp,
-                  title: "Chi Phi Lead Qua Cao",
-                  desc: "Quang cao, hoi thao, cold call nhung ty le chuyen doi thap",
+                  title: "Chi phí lead quá cao",
+                  desc: "Quảng cáo, hội thảo, cold call nhưng tỷ lệ chuyển đổi thấp",
                 },
                 {
                   icon: Factory,
-                  title: "Thieu Boi Canh Thuc Te",
-                  desc: "Khong co co hoi di sau vao day chuyen, quy trinh nha may",
+                  title: "Thiếu bối cảnh thực tế",
+                  desc: "Không có cơ hội đi sâu vào dây chuyền, quy trình nhà máy",
                 },
                 {
                   icon: Shield,
-                  title: "Khach Hang Mat Niem Tin",
-                  desc: "Tu trai nghiem te voi cac don vi trien khai truoc do",
+                  title: "Khách hàng mất niềm tin",
+                  desc: "Từ trải nghiệm tệ với các đơn vị triển khai trước đó",
                 },
                 {
                   icon: Network,
-                  title: "Thieu He Thong Ban Hang",
-                  desc: "Ky thuat manh nhung khong co kenh vao doanh nghiep san xuat",
+                  title: "Thiếu hệ thống bán hàng",
+                  desc: "Kỹ thuật mạnh nhưng không có kênh vào doanh nghiệp sản xuất",
                 },
                 {
                   icon: Target,
-                  title: "Giai Phap Tot, Van Mac Ket",
-                  desc: "San pham chat luong nhung chi dung o demo, khong ra doanh thu",
+                  title: "Giải pháp tốt, vẫn mắc kẹt",
+                  desc: "Sản phẩm chất lượng nhưng chỉ dừng ở demo, không ra doanh thu",
                 },
               ].map((item, index) => (
                 <motion.div
@@ -288,14 +288,14 @@ export default function FactoryTour() {
             {/* Section header */}
             <div className="text-center space-y-5">
               <span className="inline-block px-4 py-1.5 bg-indigo-100 text-indigo-600 text-sm font-semibold rounded-full">
-                Giai Phap
+                Giải pháp
               </span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900">
-                BCP — Cau Noi Vao Nha May
+                BCP — Cầu nối vào nhà máy
               </h2>
               <p className="text-slate-600 max-w-2xl mx-auto text-lg">
-                Business Connecting Platform ket noi nhu cau MUA - BAN - HOP TAC
-                giua 25+ nganh nghe bang AI matching thong minh.
+                Business Connecting Platform kết nối nhu cầu MUA - BÁN - HỢP TÁC
+                giữa 25+ ngành nghề bằng AI matching thông minh.
               </p>
             </div>
 
@@ -306,19 +306,19 @@ export default function FactoryTour() {
                   icon: Lightbulb,
                   gradient: "from-indigo-500 to-blue-600",
                   title: "AI Matching",
-                  desc: "Ket noi dung AI Partner voi dung doanh nghiep, dua tren nganh nghe va bai toan cu the",
+                  desc: "Kết nối đúng AI Partner với đúng doanh nghiệp, dựa trên ngành nghề và bài toán cụ thể",
                 },
                 {
                   icon: Shield,
                   gradient: "from-purple-500 to-pink-600",
-                  title: "Ecosystem Tin Cay",
-                  desc: "Doanh nghiep va doi tac duoc sang loc ky, giam rui ro du an ao va khach hang khong nghiem tuc",
+                  title: "Ecosystem tin cậy",
+                  desc: "Doanh nghiệp và đối tác được sàng lọc kỹ, giảm rủi ro dự án ảo và khách hàng không nghiêm túc",
                 },
                 {
                   icon: Handshake,
                   gradient: "from-cyan-500 to-teal-600",
-                  title: "Co-Build & Co-Sell",
-                  desc: "Dong hanh tu khao sat, de xuat den trien khai — khong chi gioi thieu roi bo",
+                  title: "Co-build & Co-sell",
+                  desc: "Đồng hành từ khảo sát, đề xuất đến triển khai — không chỉ giới thiệu rồi bỏ",
                 },
               ].map((item, index) => (
                 <motion.div
@@ -345,21 +345,21 @@ export default function FactoryTour() {
             {/* What BCP AI Partners do */}
             <div className="bg-slate-50 rounded-3xl p-8 border border-slate-200">
               <h3 className="font-bold text-xl text-slate-900 mb-6 text-center">
-                BCP AI Partners Lam Gi?
+                BCP AI Partners làm gì?
               </h3>
               <div className="grid sm:grid-cols-3 gap-5">
                 {[
                   {
                     icon: BarChart3,
-                    text: "Khai thac & sang loc Tech Leads tu cong dong BCP",
+                    text: "Khai thác & sàng lọc tech leads từ cộng đồng BCP",
                   },
                   {
                     icon: Cog,
-                    text: "Khao sat, de xuat & trien khai du an AI/IoT/Data",
+                    text: "Khảo sát, đề xuất & triển khai dự án AI/IoT/Data",
                   },
                   {
                     icon: Building2,
-                    text: "Tham gia Factory Tour gap truc tiep nha may, FDI, SMEs",
+                    text: "Tham gia Factory Tour gặp trực tiếp nhà máy, FDI, SMEs",
                   },
                 ].map((item, index) => (
                   <div
@@ -394,10 +394,10 @@ export default function FactoryTour() {
             {/* Section header */}
             <div className="text-center space-y-5">
               <span className="inline-block px-4 py-1.5 bg-green-100 text-green-600 text-sm font-semibold rounded-full">
-                Quyen Loi
+                Quyền lợi
               </span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900">
-                Ban Nhan Duoc Gi?
+                Bạn nhận được gì?
               </h2>
             </div>
 
@@ -406,33 +406,33 @@ export default function FactoryTour() {
               {[
                 {
                   icon: Zap,
-                  title: "Tech Leads That Hang Tuan",
-                  desc: "Nhu cau tu nha may, FDI, SMEs duoc BCP tong hop va gui den ban",
+                  title: "Tech leads thật hằng tuần",
+                  desc: "Nhu cầu từ nhà máy, FDI, SMEs được BCP tổng hợp và gửi đến bạn",
                 },
                 {
                   icon: Factory,
-                  title: "Factory Tours Chuyen Sau",
-                  desc: "Di thuc te, quan sat quy trinh, gap ban lanh dao — khong chi doc email",
+                  title: "Factory tours chuyên sâu",
+                  desc: "Đi thực tế, quan sát quy trình, gặp ban lãnh đạo — không chỉ đọc email",
                 },
                 {
                   icon: FileCheck,
-                  title: "Ho Tro Xay Dung Proposal",
-                  desc: "BCP dong hanh khi ban de xuat giai phap cho doanh nghiep",
+                  title: "Hỗ trợ xây dựng proposal",
+                  desc: "BCP đồng hành khi bạn đề xuất giải pháp cho doanh nghiệp",
                 },
                 {
                   icon: Globe,
-                  title: "Hien Dien Tren Ecosystem Map",
-                  desc: "Logo, profile, case study xuat hien tren website va kenh truyen thong BCP",
+                  title: "Hiện diện trên Ecosystem Map",
+                  desc: "Logo, profile, case study xuất hiện trên website và kênh truyền thông BCP",
                 },
                 {
                   icon: Calendar,
-                  title: "Uu Tien Workshop & Demo Day",
-                  desc: "Tham gia cac chuong trinh voi doanh nghiep co nhu cau that",
+                  title: "Ưu tiên workshop & demo day",
+                  desc: "Tham gia các chương trình với doanh nghiệp có nhu cầu thật",
                 },
                 {
                   icon: Award,
-                  title: "Ket Noi Nha Dau Tu",
-                  desc: "Co hoi gap quy dau tu va doi tac chien luoc neu case phu hop",
+                  title: "Kết nối nhà đầu tư",
+                  desc: "Cơ hội gặp quỹ đầu tư và đối tác chiến lược nếu case phù hợp",
                 },
               ].map((item, index) => (
                 <motion.div
@@ -479,10 +479,10 @@ export default function FactoryTour() {
                 Case Study
               </span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900">
-                Factory Tour: Nhua Hiep Thanh
+                Factory Tour: Nhựa Hiệp Thành
               </h2>
               <p className="text-slate-600 text-lg">
-                Doanh nghiep san xuat nhua & bao bi lon tai TP.HCM
+                Doanh nghiệp sản xuất nhựa & bao bì lớn tại TP.HCM
               </p>
             </div>
 
@@ -495,14 +495,14 @@ export default function FactoryTour() {
                     <ClipboardList className="h-6 w-6 text-indigo-600" />
                   </div>
                   <h3 className="font-bold text-xl text-slate-900">
-                    Truoc Factory Tour
+                    Trước Factory Tour
                   </h3>
                 </div>
                 <div className="space-y-5">
                   {[
-                    "Thu thap pain points tu ban lanh dao: san xuat, kho, chat luong, bao tri",
-                    "Thiet ke bo khao sat theo mang: IoT, AI, MES, ERP, Data, Automation",
-                    "Moi AI Partners phu hop theo tung chuyen mon tham gia",
+                    "Thu thập pain points từ ban lãnh đạo: sản xuất, kho, chất lượng, bảo trì",
+                    "Thiết kế bộ khảo sát theo mảng: IoT, AI, MES, ERP, Data, Automation",
+                    "Mời AI Partners phù hợp theo từng chuyên môn tham gia",
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-4">
                       <div className="w-8 h-8 bg-indigo-600 text-white rounded-lg flex items-center justify-center text-sm font-bold flex-shrink-0">
@@ -520,14 +520,14 @@ export default function FactoryTour() {
                   <div className="p-3 bg-emerald-100 rounded-xl">
                     <CheckCircle2 className="h-6 w-6 text-emerald-600" />
                   </div>
-                  <h3 className="font-bold text-xl text-slate-900">Ket Qua</h3>
+                  <h3 className="font-bold text-xl text-slate-900">Kết quả</h3>
                 </div>
                 <div className="space-y-5">
                   {[
-                    "Ban lanh dao chia se cu the quy trinh, du lieu va van de thuc te",
-                    "Hinh thanh huong giai phap: giam sat may, toi uu san xuat, tracking",
-                    "Nhieu AI Partners duoc moi vao vong trao doi de xay dung proposal",
-                    "BCP & nha may xay dung ban do nhu cau chuyen doi so toan dien",
+                    "Ban lãnh đạo chia sẻ cụ thể quy trình, dữ liệu và vấn đề thực tế",
+                    "Hình thành hướng giải pháp: giám sát máy, tối ưu sản xuất, tracking",
+                    "Nhiều AI Partners được mời vào vòng trao đổi để xây dựng proposal",
+                    "BCP & nhà máy xây dựng bản đồ nhu cầu chuyển đổi số toàn diện",
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-4">
                       <CheckCircle2 className="h-6 w-6 text-emerald-500 flex-shrink-0 mt-0.5" />
@@ -541,8 +541,8 @@ export default function FactoryTour() {
             {/* Quote */}
             <div className="bg-indigo-50 rounded-2xl p-8 text-center border border-indigo-100">
               <p className="text-indigo-900 font-medium text-lg italic">
-                "Mo hinh Factory Tour se duoc nhan rong trong chuoi chuong trinh
-                2025, voi AI Partners la luc luong nong cot."
+                "Mô hình Factory Tour sẽ được nhân rộng trong chuỗi chương trình
+                2025, với AI Partners là lực lượng nòng cốt."
               </p>
             </div>
           </motion.div>
@@ -563,10 +563,10 @@ export default function FactoryTour() {
             {/* Section header */}
             <div className="text-center space-y-5">
               <span className="inline-block px-4 py-1.5 bg-purple-100 text-purple-600 text-sm font-semibold rounded-full">
-                Doi Tuong
+                Đối tượng
               </span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900">
-                Ai Nen Tham Gia?
+                Ai nên tham gia?
               </h2>
             </div>
 
@@ -575,19 +575,19 @@ export default function FactoryTour() {
               {[
                 {
                   icon: Cog,
-                  text: "Cong ty cong nghe, AI Builder, startup phat trien AI/IoT/Automation/Data/ERP",
+                  text: "Công ty công nghệ, AI builder, startup phát triển AI/IoT/Automation/Data/ERP",
                 },
                 {
                   icon: Award,
-                  text: "Da co san pham san, tung lam POC hoac trien khai cho SMEs/doanh nghiep lon",
+                  text: "Đã có sản phẩm sẵn, từng làm POC hoặc triển khai cho SMEs/doanh nghiệp lớn",
                 },
                 {
                   icon: Factory,
-                  text: "Muon di sau vao san xuat, logistics, thuong mai, F&B, co khi, go, dien tu",
+                  text: "Muốn đi sâu vào sản xuất, logistics, thương mại, F&B, cơ khí, gỗ, điện tử",
                 },
                 {
                   icon: Handshake,
-                  text: "San sang dong hanh lau dai, toi uu giai phap theo thuc te nha may",
+                  text: "Sẵn sàng đồng hành lâu dài, tối ưu giải pháp theo thực tế nhà máy",
                 },
               ].map((item, index) => (
                 <motion.div
@@ -609,9 +609,9 @@ export default function FactoryTour() {
             {/* Note for early-stage startups */}
             <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6 max-w-2xl mx-auto">
               <p className="text-amber-800 text-center">
-                <strong>Startup giai doan dau?</strong> Neu co cong nghe tiem
-                nang, van co the dang ky — BCP se xem xet va ket noi trong case
-                phu hop.
+                <strong>Startup giai đoạn đầu?</strong> Nếu có công nghệ tiềm
+                năng, vẫn có thể đăng ký — BCP sẽ xem xét và kết nối trong case
+                phù hợp.
               </p>
             </div>
           </motion.div>
@@ -632,10 +632,10 @@ export default function FactoryTour() {
             {/* Section header */}
             <div className="text-center space-y-5">
               <span className="inline-block px-4 py-1.5 bg-cyan-100 text-cyan-600 text-sm font-semibold rounded-full">
-                Quy Trinh
+                Quy trình
               </span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900">
-                4 Buoc Tham Gia
+                4 bước tham gia
               </h2>
             </div>
 
@@ -645,26 +645,26 @@ export default function FactoryTour() {
                 {
                   step: "01",
                   icon: ClipboardList,
-                  title: "Dang Ky Online",
-                  desc: "Dien form voi thong tin cong ty, giai phap, cong nghe va mong muon",
+                  title: "Đăng ký online",
+                  desc: "Điền form với thông tin công ty, giải pháp, công nghệ và mong muốn",
                 },
                 {
                   step: "02",
                   icon: UserCheck,
-                  title: "Sang Loc & Ket Noi",
-                  desc: "BCP danh gia nang luc, de xuat nhom ket noi theo nganh va bai toan",
+                  title: "Sàng lọc & kết nối",
+                  desc: "BCP đánh giá năng lực, đề xuất nhóm kết nối theo ngành và bài toán",
                 },
                 {
                   step: "03",
                   icon: Factory,
                   title: "Factory Tour",
-                  desc: "Tham du tour, workshop, trao doi truc tiep voi nha may",
+                  desc: "Tham dự tour, workshop, trao đổi trực tiếp với nhà máy",
                 },
                 {
                   step: "04",
                   icon: Rocket,
-                  title: "De Xuat & Trien Khai",
-                  desc: "Xay dung proposal, BCP dong hanh trong qua trinh trien khai",
+                  title: "Đề xuất & triển khai",
+                  desc: "Xây dựng proposal, BCP đồng hành trong quá trình triển khai",
                 },
               ].map((item, index) => (
                 <motion.div
@@ -718,12 +718,12 @@ export default function FactoryTour() {
             className="text-center space-y-10 max-w-4xl mx-auto"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-              San Sang Co Du An AI/IoT Thuc Su?
+              Sẵn sàng có dự án AI/IoT thực sự?
             </h2>
 
             <p className="text-white/90 text-lg md:text-xl max-w-2xl mx-auto">
-              Thi truong dong, nhung du an that va khach hang nghiem tuc thi it.
-              BCP giup ban ket noi voi nhung co hoi do.
+              Thị trường đông, nhưng dự án thật và khách hàng nghiêm túc thì ít.
+              BCP giúp bạn kết nối với những cơ hội đó.
             </p>
 
             <div className="pt-4">
@@ -731,15 +731,15 @@ export default function FactoryTour() {
             </div>
 
             <p className="text-white/60 text-sm">
-              Chi mat 3 phut dang ky • BCP lien he trong 3-5 ngay lam viec
+              Chỉ mất 3 phút đăng ký • BCP liên hệ trong 3–5 ngày làm việc
             </p>
 
             {/* Trust indicators */}
             <div className="flex flex-wrap items-center justify-center gap-8 pt-8 text-white/80 text-sm">
               {[
-                { icon: Shield, text: "Sang Loc Ky Luong" },
-                { icon: Users, text: "25+ Nganh Nghe" },
-                { icon: Award, text: "Doi Tac Uy Tin" },
+                { icon: Shield, text: "Sàng lọc kỹ lưỡng" },
+                { icon: Users, text: "25+ ngành nghề" },
+                { icon: Award, text: "Đối tác uy tín" },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-2">
                   <item.icon className="h-5 w-5" />
