@@ -8,6 +8,7 @@ import "./request-proposal.css";
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xzdnwkqv";
 
 type Lang = "en" | "vi";
+type ServiceKey = "consulting" | "training" | "build" | "not_sure";
 
 // zod messages are stored as keys, then localized at render time via T[lang].err
 const schema = z.object({
@@ -40,10 +41,8 @@ const T = {
     fallback: 'Prefer to talk first? <a href="mailto:duc.truong@aipartners.asia">Email us</a> · 224A Điện Biên Phủ, Xuân Hòa Ward, HCMC',
     p1: "Need", p2: "Details", p3: "Contact",
     s1title: "What do you need?", s1sub: "Pick the closest option. You can explain more in the next step.",
-    s2title: "Tell us about it", s2sub: "Tap the chips to add details, then describe it in your own words.",
     s3title: "Where do we send the plan?", s3sub: "One last step so we can reach you.",
     fDescribe: "Describe what you need",
-    phDescribe: "Describe the problem or workflow in plain words: what you're trying to do, who will use it, and what 'done' looks like. Tap the chips above to add details.",
     fIndustry: "Industry", fSize: "Company size", fTimeline: "Timeline", fBudget: "Budget range (USD)",
     fName: "Full name", fEmail: "Work email", fCompany: "Company / Organization", fPhone: "Phone / Zalo / WhatsApp",
     phName: "Your name", phEmail: "you@company.com", phCompany: "Company name", phPhone: "Optional",
@@ -59,11 +58,46 @@ const T = {
       { v: "build", t: "Build a solution", d: "An app, system, automation, dashboard, or AI." },
       { v: "not_sure", t: "Not sure yet", d: "Describe your situation and we'll help shape the right approach." },
     ],
-    chipGroups: [
-      { l: "What kind of solution", c: ["Booking / scheduling", "POS / payments", "Customer management (CRM)", "Loyalty / memberships", "Inventory", "Multi-branch", "Mobile app", "Web portal", "Dashboard / reporting", "Automation", "Website", "AI assistant", "Other"] },
-      { l: "Where it runs", c: ["Phone app", "Web", "Internal tool", "Customer-facing"] },
-      { l: "What you use today", c: ["Excel / Sheets", "Paper", "Existing POS", "Zalo", "Accounting software", "Nothing yet"] },
-    ],
+    detailPaths: {
+      build: {
+        title: "Tell us about the solution",
+        sub: "Choose any relevant prompts, then describe the workflow or outcome in your own words.",
+        placeholder: "Describe the problem or workflow: what you want to improve, who will use it, and what a successful result looks like.",
+        chipGroups: [
+          { l: "What kind of solution", c: ["Booking / scheduling", "POS / payments", "Customer management (CRM)", "Loyalty / memberships", "Inventory", "Operations management", "Mobile app", "Web portal", "Dashboard / reporting", "Automation", "Website", "AI assistant", "Other"] },
+          { l: "Where it runs", c: ["Phone app", "Web", "Internal tool", "Customer-facing"] },
+          { l: "What you use today", c: ["Excel / Sheets", "Paper", "Existing POS", "Zalo", "Accounting software", "Nothing yet"] },
+        ],
+      },
+      consulting: {
+        title: "What should the roadmap address?",
+        sub: "Choose the areas that matter now, then describe the decision or challenge you need to resolve.",
+        placeholder: "What decision or challenge should this engagement help resolve? Include what you have already tried and the outcome you need.",
+        chipGroups: [
+          { l: "Focus areas", c: ["Digital strategy", "AI roadmap", "Process review", "Data strategy", "Automation roadmap", "Vendor selection", "Build vs buy", "Other"] },
+          { l: "Current stage", c: ["Starting from scratch", "Exploring options", "Tools already in use", "Existing roadmap", "Need a second opinion"] },
+        ],
+      },
+      training: {
+        title: "What should the team learn?",
+        sub: "Choose the audience and learning priorities, then add a little context about current skill levels.",
+        placeholder: "Who is the training for, what should they be able to do afterwards, and are there any preferred dates or delivery requirements?",
+        chipGroups: [
+          { l: "Audience", c: ["Leadership team", "Department managers", "Business teams", "Technical teams", "Company-wide"] },
+          { l: "Training focus", c: ["AI foundations", "Practical prompting", "Workflow automation", "AI for managers", "Role-specific use cases", "Responsible AI", "Custom programme"] },
+          { l: "Format", c: ["In-person", "Online", "Hybrid", "Half-day workshop", "Multi-session programme"] },
+        ],
+      },
+      not_sure: {
+        title: "Tell us what is getting in the way",
+        sub: "Choose the closest business need, then describe the current situation in your own words.",
+        placeholder: "What would you like to improve, what is making it difficult today, and what outcome would be useful?",
+        chipGroups: [
+          { l: "Main goal", c: ["Improve operations", "Reduce manual work", "Better reporting", "Customer experience", "Train the team", "Explore AI", "Other"] },
+          { l: "Current situation", c: ["Excel / Sheets", "Paper", "Existing software", "Multiple disconnected tools", "Nothing yet"] },
+        ],
+      },
+    },
     industry: ["Select…", "B2B Professional Services", "Finance", "Retail & D2C", "Hospitality & Tourism", "Spa, Wellness & Beauty", "Food & Beverage (F&B)", "Healthcare", "Education", "Manufacturing", "Real Estate & Construction", "Logistics & Supply Chain", "Other"],
     size: ["Select…", "1–10", "11–50", "51–200", "200+"],
     timeline: ["Select…", "Just exploring", "Within 1 month", "1–3 months", "3+ months"],
@@ -83,10 +117,8 @@ const T = {
     fallback: 'Bạn muốn trao đổi trước? Hãy <a href="mailto:duc.truong@aipartners.asia">gửi email cho chúng tôi</a> · 224A Điện Biên Phủ, phường Xuân Hòa, TP.HCM',
     p1: "Nhu cầu", p2: "Chi tiết", p3: "Liên hệ",
     s1title: "Bạn đang cần hỗ trợ về vấn đề nào?", s1sub: "Chọn phương án gần nhất. Bạn có thể mô tả chi tiết hơn ở bước tiếp theo.",
-    s2title: "Mô tả nhu cầu của bạn", s2sub: "Chạm vào các gợi ý để bổ sung chi tiết, rồi mô tả theo cách của bạn.",
     s3title: "Chúng tôi liên hệ với bạn ở đâu?", s3sub: "Chỉ cần để lại thông tin để chúng tôi có thể liên hệ với bạn.",
     fDescribe: "Mô tả nhu cầu",
-    phDescribe: "Hãy mô tả nhu cầu theo cách đơn giản nhất: bạn muốn giải quyết vấn đề gì, ai sẽ sử dụng và kết quả mong đợi là gì. Chạm vào các gợi ý phía trên để bổ sung thông tin.",
     fIndustry: "Lĩnh vực hoạt động", fSize: "Quy mô doanh nghiệp", fTimeline: "Thời gian dự kiến", fBudget: "Ngân sách dự kiến (VND)",
     fName: "Họ và tên", fEmail: "Email công việc", fCompany: "Công ty / Tổ chức", fPhone: "Điện thoại / Zalo / WhatsApp",
     phName: "Tên của bạn", phEmail: "ban@congty.com", phCompany: "Tên công ty", phPhone: "Không bắt buộc",
@@ -102,11 +134,46 @@ const T = {
       { v: "build", t: "Xây dựng giải pháp", d: "Ứng dụng, hệ thống, tự động hóa, dashboard hoặc AI." },
       { v: "not_sure", t: "Chưa xác định rõ", d: "Chia sẻ tình huống hiện tại để chúng tôi cùng bạn xác định hướng đi." },
     ],
-    chipGroups: [
-      { l: "Loại giải pháp", c: ["Đặt chỗ / đặt lịch", "POS / thanh toán", "Quản lý khách hàng (CRM)", "Tích điểm / thành viên", "Quản lý kho", "Nhiều chi nhánh", "Ứng dụng di động", "Cổng thông tin", "Dashboard / báo cáo", "Tự động hóa", "Website", "Trợ lý AI", "Khác"] },
-      { l: "Nền tảng sử dụng", c: ["Ứng dụng di động", "Web", "Công cụ nội bộ", "Dành cho khách hàng"] },
-      { l: "Công cụ hiện tại", c: ["Excel / Sheets", "Sổ sách / giấy tờ", "POS hiện có", "Zalo", "Phần mềm kế toán", "Chưa dùng gì"] },
-    ],
+    detailPaths: {
+      build: {
+        title: "Mô tả giải pháp bạn cần",
+        sub: "Chọn các gợi ý phù hợp, sau đó mô tả quy trình hoặc kết quả mong muốn theo cách của bạn.",
+        placeholder: "Bạn muốn cải thiện vấn đề hoặc quy trình nào, ai sẽ sử dụng giải pháp và kết quả như thế nào được xem là thành công?",
+        chipGroups: [
+          { l: "Loại giải pháp", c: ["Đặt chỗ / đặt lịch", "POS / thanh toán", "Quản lý khách hàng (CRM)", "Tích điểm / thành viên", "Quản lý kho", "Quản lý vận hành", "Ứng dụng di động", "Cổng thông tin", "Dashboard / báo cáo", "Tự động hóa", "Website", "Trợ lý AI", "Khác"] },
+          { l: "Nền tảng sử dụng", c: ["Ứng dụng di động", "Web", "Công cụ nội bộ", "Dành cho khách hàng"] },
+          { l: "Công cụ hiện tại", c: ["Excel / Sheets", "Sổ sách / giấy tờ", "POS hiện có", "Zalo", "Phần mềm kế toán", "Chưa dùng gì"] },
+        ],
+      },
+      consulting: {
+        title: "Bạn cần tư vấn về vấn đề nào?",
+        sub: "Chọn các nội dung đang được quan tâm, sau đó chia sẻ quyết định hoặc vấn đề doanh nghiệp cần giải quyết.",
+        placeholder: "Doanh nghiệp đang cần đưa ra quyết định hoặc giải quyết vấn đề gì? Bạn có thể chia sẻ những gì đã thử và kết quả mong muốn.",
+        chipGroups: [
+          { l: "Nội dung tư vấn", c: ["Chiến lược số", "Lộ trình AI", "Rà soát quy trình", "Chiến lược dữ liệu", "Lộ trình tự động hóa", "Lựa chọn nhà cung cấp", "Tự xây dựng hay mua sẵn", "Khác"] },
+          { l: "Giai đoạn hiện tại", c: ["Chưa biết bắt đầu từ đâu", "Đang tìm hiểu", "Đã sử dụng một số công cụ", "Đã có lộ trình", "Cần thêm góc nhìn chuyên gia"] },
+        ],
+      },
+      training: {
+        title: "Đội ngũ cần được trang bị những gì?",
+        sub: "Chọn nhóm học viên và nội dung ưu tiên, sau đó chia sẻ thêm về năng lực hiện tại của đội ngũ.",
+        placeholder: "Chương trình dành cho ai, sau đào tạo họ cần làm được gì và doanh nghiệp có yêu cầu nào về thời gian hoặc hình thức tổ chức?",
+        chipGroups: [
+          { l: "Nhóm học viên", c: ["Ban lãnh đạo", "Quản lý phòng ban", "Khối kinh doanh", "Đội ngũ kỹ thuật", "Toàn doanh nghiệp"] },
+          { l: "Nội dung đào tạo", c: ["Kiến thức nền tảng về AI", "Kỹ năng viết prompt", "Tự động hóa công việc", "AI dành cho quản lý", "Ứng dụng theo vị trí công việc", "Sử dụng AI có trách nhiệm", "Chương trình thiết kế riêng"] },
+          { l: "Hình thức", c: ["Trực tiếp", "Trực tuyến", "Kết hợp", "Workshop nửa ngày", "Chương trình nhiều buổi"] },
+        ],
+      },
+      not_sure: {
+        title: "Điều gì đang cản trở doanh nghiệp?",
+        sub: "Chọn nhu cầu gần nhất, sau đó mô tả tình hình hiện tại theo cách của bạn.",
+        placeholder: "Bạn muốn cải thiện điều gì, khó khăn hiện tại là gì và kết quả nào sẽ thực sự hữu ích cho doanh nghiệp?",
+        chipGroups: [
+          { l: "Mục tiêu chính", c: ["Cải thiện vận hành", "Giảm công việc thủ công", "Báo cáo tốt hơn", "Nâng cao trải nghiệm khách hàng", "Đào tạo đội ngũ", "Tìm hiểu về AI", "Khác"] },
+          { l: "Tình hình hiện tại", c: ["Excel / Sheets", "Sổ sách / giấy tờ", "Đã có phần mềm", "Nhiều công cụ rời rạc", "Chưa sử dụng công cụ"] },
+        ],
+      },
+    },
     industry: ["Chọn…", "Dịch vụ chuyên môn B2B", "Tài chính", "Bán lẻ và D2C", "Khách sạn và du lịch", "Spa, chăm sóc sức khỏe và làm đẹp", "Nhà hàng và ẩm thực (F&B)", "Y tế", "Giáo dục và đào tạo", "Sản xuất", "Bất động sản và xây dựng", "Logistics và chuỗi cung ứng", "Khác"],
     size: ["Chọn…", "1–10", "11–50", "51–200", "200+"],
     timeline: ["Chọn…", "Đang tìm hiểu", "Trong 1 tháng", "1–3 tháng", "Trên 3 tháng"],
@@ -138,6 +205,7 @@ export default function RequestProposal() {
 
   const service = watch("service");
   const details = watch("details") || "";
+  const detailPath = t.detailPaths[(service || "not_sure") as ServiceKey];
 
   useEffect(() => { document.title = t.title; }, [t.title]);
 
@@ -161,6 +229,14 @@ export default function RequestProposal() {
       setValue("details", tag + cur);
     }
     setActiveChips(next);
+  };
+
+  const selectService = (value: ServiceKey) => {
+    if (service !== value) {
+      setValue("details", "");
+      setActiveChips(new Set());
+    }
+    setValue("service", value);
   };
 
   const onSubmit = async (v: FormValues) => {
@@ -284,7 +360,7 @@ export default function RequestProposal() {
                             type="button"
                             key={s.v}
                             className={`rfp-tile ${service === s.v ? "sel" : ""}`}
-                            onClick={() => setValue("service", s.v)}
+                            onClick={() => selectService(s.v)}
                           >
                             <span className="ic">{TILE_ICONS[i]}</span>
                             <h5>{s.t}</h5>
@@ -297,11 +373,11 @@ export default function RequestProposal() {
 
                   {step === 1 && (
                     <section className="rfp-stepview">
-                      <div className="rfp-steptitle" role="heading" aria-level={2} tabIndex={-1}>{t.s2title}</div>
-                      <div className="rfp-stepsub">{t.s2sub}</div>
+                      <div className="rfp-steptitle" role="heading" aria-level={2} tabIndex={-1}>{detailPath.title}</div>
+                      <div className="rfp-stepsub">{detailPath.sub}</div>
                       <div className="rfp-detail-layout">
                         <div className="rfp-chip-panel">
-                          {t.chipGroups.map((g, gi) => (
+                          {detailPath.chipGroups.map((g, gi) => (
                             <div className="rfp-cgroup" key={gi}>
                               <div className="rfp-cglabel">{g.l}</div>
                               <div className="rfp-chips">
@@ -324,7 +400,7 @@ export default function RequestProposal() {
                             <label className="rfp-fl">{t.fDescribe} <span className="req">*</span></label>
                             <textarea
                               {...register("details")}
-                              placeholder={t.phDescribe}
+                              placeholder={detailPath.placeholder}
                               aria-invalid={showErr && !!errors.details}
                             />
                             {showErr && errors.details && <div className="rfp-err">{errMsg(errors.details.message as string)}</div>}
