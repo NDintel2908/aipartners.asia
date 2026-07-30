@@ -8,7 +8,8 @@ export const navTranslations = {
       aiWorkforce: "AI Workforce",
       aiStore: "AI Agents Market",
       contact: "Contact Us",
-      factoryTour: "Factory Tour"
+      factoryTour: "Factory Tour",
+      rfp: "Request for Proposal"
     }
   },
   ja: {
@@ -19,7 +20,8 @@ export const navTranslations = {
       aiWorkforce: "AI人材",
       aiStore: "AIエージェントマーケット",
       contact: "お問い合わせ",
-      factoryTour: "Factory Tour"
+      factoryTour: "Factory Tour",
+      rfp: "提案のご依頼"
     }
   }
 };
