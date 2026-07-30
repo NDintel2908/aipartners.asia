@@ -30,12 +30,12 @@ const T = {
     title: "Request a Proposal | AIPartners.asia",
     eyebrow: "One-Stop Digital Transformation Station",
     h1: 'So, what do you want to build? <span class="g">You\'ll get a plan, not a pitch.</span>',
-    sub: "From a single app to a full transformation: booking systems, dashboards, mobile apps, automation, data platforms, or AI. We assess your case across an ecosystem of 60+ vetted partners and come back with a staged, de-risked roadmap. No single-vendor lock-in.",
+    sub: "From a single app to a full transformation, AIP helps you clarify the need, bring in the right specialists, and build a practical delivery roadmap. Access 60+ vetted partners without being locked into one vendor.",
     trust: [["36", "projects delivered"], ["60+", "partner ecosystem"], ["16+", "domain experts"], ["", "Vietnam · Japan · SEA"]],
     nextTitle: "What happens next",
-    n1: "<b>We review &amp; match.</b> Within 2–3 business days we assess your case and match the right people or partners.",
-    n2: "<b>We come back with a plan.</b> A shortlist, roadmap sketch, or quote sized to you, not a generic deck.",
-    n3: "<b>You decide, no obligation.</b> The initial assessment costs nothing. You commit only when the path is clear.",
+    n1: "<b>We review and match.</b> Within 2 to 3 business days, we assess your needs and identify the right capabilities.",
+    n2: "<b>We propose a way forward.</b> You receive a relevant shortlist, roadmap sketch, or quote based on your situation.",
+    n3: "<b>You decide with no obligation.</b> The initial assessment is free, with no commitment to proceed.",
     freeTag: "Free first assessment · no obligation",
     fallback: 'Prefer to talk first? <a href="mailto:duc.truong@aipartners.asia">Email us</a> · 224A Điện Biên Phủ, Xuân Hòa Ward, HCMC',
     p1: "Need", p2: "Details", p3: "Contact",
@@ -73,12 +73,12 @@ const T = {
     title: "Bắt đầu dự án | AIPartners.asia",
     eyebrow: "Đối tác chuyển đổi số toàn diện",
     h1: 'Chia sẻ nhu cầu. <span class="g">Chúng tôi đề xuất hướng đi phù hợp.</span>',
-    sub: "Dù bạn cần một hệ thống đặt lịch, dashboard, ứng dụng di động hay chương trình chuyển đổi toàn diện về tự động hóa, dữ liệu và AI, AIP đều bắt đầu từ nhu cầu thực tế của doanh nghiệp. Chúng tôi lựa chọn chuyên gia và đối tác phù hợp từ mạng lưới hơn 60 đơn vị đã được thẩm định, sau đó xây dựng lộ trình triển khai theo từng giai đoạn. Nhờ đó, doanh nghiệp có được giải pháp phù hợp hơn, giảm rủi ro và không bị ràng buộc vào một nhà cung cấp duy nhất.",
+    sub: "Từ một ứng dụng cụ thể đến chương trình chuyển đổi toàn diện, AIP giúp doanh nghiệp làm rõ nhu cầu, lựa chọn đúng chuyên gia và xây dựng lộ trình triển khai phù hợp. Hơn 60 đối tác đã được thẩm định, không phụ thuộc vào một nhà cung cấp duy nhất.",
     trust: [["36", "dự án đã triển khai"], ["60+", "đối tác trong hệ sinh thái"], ["16+", "chuyên gia lĩnh vực"], ["", "Việt Nam · Nhật Bản · ĐNÁ"]],
     nextTitle: "Các bước tiếp theo",
-    n1: "<b>Tiếp nhận &amp; kết nối.</b> Trong 2–3 ngày làm việc, chúng tôi xem xét nhu cầu và chọn chuyên gia hoặc đối tác phù hợp.",
-    n2: "<b>Phản hồi bằng kế hoạch.</b> Danh sách đối tác, phác thảo lộ trình hoặc báo giá theo đúng thực tế của bạn, không dùng mẫu chung.",
-    n3: "<b>Bạn quyết định, không ràng buộc.</b> Bước đánh giá ban đầu hoàn toàn miễn phí. Bạn chỉ triển khai khi phương án đã rõ ràng.",
+    n1: "<b>Tiếp nhận và đánh giá.</b> Trong 2 đến 3 ngày làm việc, chúng tôi xem xét nhu cầu và lựa chọn năng lực phù hợp.",
+    n2: "<b>Đề xuất hướng đi.</b> Bạn nhận được danh sách đối tác, phác thảo lộ trình hoặc báo giá phù hợp với thực tế.",
+    n3: "<b>Bạn chủ động quyết định.</b> Đánh giá ban đầu miễn phí, không kèm cam kết triển khai.",
     freeTag: "Đánh giá ban đầu miễn phí · không ràng buộc",
     fallback: 'Bạn muốn trao đổi trước? Hãy <a href="mailto:duc.truong@aipartners.asia">gửi email cho chúng tôi</a> · 224A Điện Biên Phủ, phường Xuân Hòa, TP.HCM',
     p1: "Nhu cầu", p2: "Chi tiết", p3: "Liên hệ",
@@ -201,8 +201,24 @@ export default function RequestProposal() {
     }
   };
 
+  const goToStep = (nextStep: number) => {
+    setStep(nextStep);
+    window.setTimeout(() => {
+      const panel = document.getElementById("rfp-form");
+      const title = panel?.querySelector<HTMLElement>(".rfp-steptitle");
+      if (!panel) return;
+
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({
+        top: panel.getBoundingClientRect().top + window.scrollY - 84,
+        behavior: reduceMotion ? "auto" : "smooth",
+      });
+      title?.focus({ preventScroll: true });
+    }, 0);
+  };
+
   const goNext = () => {
-    if (step < 2) setStep(step + 1);
+    if (step < 2) goToStep(step + 1);
   };
 
   const html = (s: string) => ({ dangerouslySetInnerHTML: { __html: s } });
@@ -213,16 +229,16 @@ export default function RequestProposal() {
         <div className="rfp-aurora" />
         <div className="rfp-aurora two" />
         <div className="rfp-topfade" />
-        <div className="rfp-brandrow">
-          <div className="rfp-langtoggle" role="group" aria-label="Language">
-            <button type="button" className={lang === "en" ? "on" : ""} onClick={() => setLang("en")}>EN</button>
-            <button type="button" className={lang === "vi" ? "on" : ""} onClick={() => setLang("vi")}>VI</button>
-          </div>
-        </div>
 
-        {/* LEFT RAIL */}
-        <aside className="rfp-rail">
-          <div className="rfp-railbody">
+        <div className="rfp-frame">
+          <div className="rfp-brandrow">
+            <div className="rfp-langtoggle" role="group" aria-label="Language">
+              <button type="button" className={lang === "en" ? "on" : ""} onClick={() => setLang("en")}>EN</button>
+              <button type="button" className={lang === "vi" ? "on" : ""} onClick={() => setLang("vi")}>VI</button>
+            </div>
+          </div>
+
+          <header className="rfp-heroarea">
             <span className="rfp-eyebrow">{t.eyebrow}</span>
             <h1 className="rfp-hero" {...html(t.h1)} />
             <p className="rfp-sub">{t.sub}</p>
@@ -231,51 +247,36 @@ export default function RequestProposal() {
                 <span key={i}>{x[0] ? <b>{x[0]}</b> : null}{x[1]}</span>
               ))}
             </div>
-          </div>
+          </header>
 
-          <div className="rfp-next">
-            <h4>{t.nextTitle}</h4>
-            <div className="rfp-steps">
-              <div className="line" />
-              <div className="rfp-snode"><span className="num">1</span><p {...html(t.n1)} /></div>
-              <div className="rfp-snode"><span className="num">2</span><p {...html(t.n2)} /></div>
-              <div className="rfp-snode"><span className="num">3</span><p {...html(t.n3)} /></div>
-            </div>
-            <span className="rfp-noobligation"><span className="d" />{t.freeTag}</span>
-          </div>
+          <main className="rfp-panelwrap" id="rfp-form">
+            <div className="rfp-card">
+              <div className="rfp-cardpad">
+                <div className="rfp-prog">
+                  <div aria-current={step === 0 ? "step" : undefined} className={`rfp-pstep ${step === 0 ? "active" : ""} ${step > 0 ? "done" : ""}`}>
+                    <span className="pc">1</span><span className="pl">{t.p1}</span>
+                  </div>
+                  <div className={`rfp-pbar ${step > 0 ? "fill" : ""}`}><i /></div>
+                  <div aria-current={step === 1 ? "step" : undefined} className={`rfp-pstep ${step === 1 ? "active" : ""} ${step > 1 ? "done" : ""}`}>
+                    <span className="pc">2</span><span className="pl">{t.p2}</span>
+                  </div>
+                  <div className={`rfp-pbar ${step > 1 ? "fill" : ""}`}><i /></div>
+                  <div aria-current={step === 2 ? "step" : undefined} className={`rfp-pstep ${step === 2 ? "active" : ""}`}>
+                    <span className="pc">3</span><span className="pl">{t.p3}</span>
+                  </div>
+                </div>
 
-          <p className="rfp-fallback" {...html(t.fallback)} />
-        </aside>
-
-        {/* RIGHT FORM */}
-        <main className="rfp-panelwrap">
-          <div className="rfp-card">
-            <div className="rfp-cardpad">
-              <div className="rfp-prog">
-                <div className={`rfp-pstep ${step === 0 ? "active" : ""} ${step > 0 ? "done" : ""}`}>
-                  <span className="pc">1</span><span className="pl">{t.p1}</span>
-                </div>
-                <div className={`rfp-pbar ${step > 0 ? "fill" : ""}`}><i /></div>
-                <div className={`rfp-pstep ${step === 1 ? "active" : ""} ${step > 1 ? "done" : ""}`}>
-                  <span className="pc">2</span><span className="pl">{t.p2}</span>
-                </div>
-                <div className={`rfp-pbar ${step > 1 ? "fill" : ""}`}><i /></div>
-                <div className={`rfp-pstep ${step === 2 ? "active" : ""}`}>
-                  <span className="pc">3</span><span className="pl">{t.p3}</span>
-                </div>
-              </div>
-
-              {done ? (
-                <div className="rfp-success">
-                  <div className="badge">✓</div>
-                  <h3>{t.okTitle}</h3>
-                  <p {...html(t.okBody)} />
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit(onSubmit)} noValidate>
+                {done ? (
+                  <div className="rfp-success">
+                    <div className="badge">✓</div>
+                    <h3>{t.okTitle}</h3>
+                    <p {...html(t.okBody)} />
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit(onSubmit)} noValidate>
                   {step === 0 && (
                     <section className="rfp-stepview">
-                      <div className="rfp-steptitle">{t.s1title}</div>
+                      <div className="rfp-steptitle" role="heading" aria-level={2} tabIndex={-1}>{t.s1title}</div>
                       <div className="rfp-stepsub">{t.s1sub}</div>
                       <div className="rfp-tiles">
                         {t.services.map((s, i) => (
@@ -296,58 +297,64 @@ export default function RequestProposal() {
 
                   {step === 1 && (
                     <section className="rfp-stepview">
-                      <div className="rfp-steptitle">{t.s2title}</div>
+                      <div className="rfp-steptitle" role="heading" aria-level={2} tabIndex={-1}>{t.s2title}</div>
                       <div className="rfp-stepsub">{t.s2sub}</div>
-                      {t.chipGroups.map((g, gi) => (
-                        <div className="rfp-cgroup" key={gi}>
-                          <div className="rfp-cglabel">{g.l}</div>
-                          <div className="rfp-chips">
-                            {g.c.map((c) => (
-                              <button
-                                type="button"
-                                key={c}
-                                className={`rfp-chip ${activeChips.has(c) ? "on" : ""}`}
-                                onClick={() => toggleChip(c)}
-                              >
-                                {c}
-                              </button>
-                            ))}
+                      <div className="rfp-detail-layout">
+                        <div className="rfp-chip-panel">
+                          {t.chipGroups.map((g, gi) => (
+                            <div className="rfp-cgroup" key={gi}>
+                              <div className="rfp-cglabel">{g.l}</div>
+                              <div className="rfp-chips">
+                                {g.c.map((c) => (
+                                  <button
+                                    type="button"
+                                    key={c}
+                                    className={`rfp-chip ${activeChips.has(c) ? "on" : ""}`}
+                                    onClick={() => toggleChip(c)}
+                                  >
+                                    {c}
+                                  </button>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="rfp-detail-panel">
+                          <div className="rfp-field">
+                            <label className="rfp-fl">{t.fDescribe} <span className="req">*</span></label>
+                            <textarea
+                              {...register("details")}
+                              placeholder={t.phDescribe}
+                              aria-invalid={showErr && !!errors.details}
+                            />
+                            {showErr && errors.details && <div className="rfp-err">{errMsg(errors.details.message as string)}</div>}
                           </div>
-                        </div>
-                      ))}
-                      <div className="rfp-field" style={{ marginTop: 6 }}>
-                        <label className="rfp-fl">{t.fDescribe} <span className="req">*</span></label>
-                        <textarea
-                          {...register("details")}
-                          placeholder={t.phDescribe}
-                          aria-invalid={showErr && !!errors.details}
-                        />
-                        {showErr && errors.details && <div className="rfp-err">{errMsg(errors.details.message as string)}</div>}
-                      </div>
-                      <div className="rfp-grid2">
-                        <div className="rfp-field">
-                          <label className="rfp-fl">{t.fIndustry}</label>
-                          <select {...register("industry")}>
-                            {t.industry.map((o, i) => <option key={o} value={i === 0 ? "" : o}>{o}</option>)}
-                          </select>
-                        </div>
-                        <div className="rfp-field">
-                          <label className="rfp-fl">{t.fSize}</label>
-                          <select {...register("size")}>
-                            {t.size.map((o, i) => <option key={o} value={i === 0 ? "" : o}>{o}</option>)}
-                          </select>
-                        </div>
-                        <div className="rfp-field">
-                          <label className="rfp-fl">{t.fTimeline}</label>
-                          <select {...register("timeline")}>
-                            {t.timeline.map((o, i) => <option key={o} value={i === 0 ? "" : o}>{o}</option>)}
-                          </select>
-                        </div>
-                        <div className="rfp-field">
-                          <label className="rfp-fl">{t.fBudget}</label>
-                          <select {...register("budget")}>
-                            {t.budget.map((o) => <option key={o} value={o}>{o}</option>)}
-                          </select>
+                          <div className="rfp-grid2">
+                            <div className="rfp-field">
+                              <label className="rfp-fl">{t.fIndustry}</label>
+                              <select {...register("industry")}>
+                                {t.industry.map((o, i) => <option key={o} value={i === 0 ? "" : o}>{o}</option>)}
+                              </select>
+                            </div>
+                            <div className="rfp-field">
+                              <label className="rfp-fl">{t.fSize}</label>
+                              <select {...register("size")}>
+                                {t.size.map((o, i) => <option key={o} value={i === 0 ? "" : o}>{o}</option>)}
+                              </select>
+                            </div>
+                            <div className="rfp-field">
+                              <label className="rfp-fl">{t.fTimeline}</label>
+                              <select {...register("timeline")}>
+                                {t.timeline.map((o, i) => <option key={o} value={i === 0 ? "" : o}>{o}</option>)}
+                              </select>
+                            </div>
+                            <div className="rfp-field">
+                              <label className="rfp-fl">{t.fBudget}</label>
+                              <select {...register("budget")}>
+                                {t.budget.map((o) => <option key={o} value={o}>{o}</option>)}
+                              </select>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </section>
@@ -355,7 +362,7 @@ export default function RequestProposal() {
 
                   {step === 2 && (
                     <section className="rfp-stepview">
-                      <div className="rfp-steptitle">{t.s3title}</div>
+                      <div className="rfp-steptitle" role="heading" aria-level={2} tabIndex={-1}>{t.s3title}</div>
                       <div className="rfp-stepsub">{t.s3sub}</div>
                       <div className="rfp-grid2">
                         <div className="rfp-field">
@@ -386,7 +393,7 @@ export default function RequestProposal() {
                     <button
                       type="button"
                       className="rfp-btn ghost"
-                      onClick={() => setStep(Math.max(0, step - 1))}
+                      onClick={() => goToStep(Math.max(0, step - 1))}
                       disabled={step === 0}
                     >
                       {t.back}
@@ -401,11 +408,26 @@ export default function RequestProposal() {
                       </button>
                     )}
                   </div>
-                </form>
-              )}
+                  </form>
+                )}
+              </div>
             </div>
-          </div>
-        </main>
+          </main>
+
+          <section className="rfp-next" aria-labelledby="rfp-next-title">
+            <div className="rfp-nexthead">
+              <h2 id="rfp-next-title">{t.nextTitle}</h2>
+              <span className="rfp-noobligation"><span className="d" />{t.freeTag}</span>
+            </div>
+            <div className="rfp-steps">
+              <div className="rfp-snode"><span className="num">1</span><p {...html(t.n1)} /></div>
+              <div className="rfp-snode"><span className="num">2</span><p {...html(t.n2)} /></div>
+              <div className="rfp-snode"><span className="num">3</span><p {...html(t.n3)} /></div>
+            </div>
+          </section>
+
+          <p className="rfp-fallback" {...html(t.fallback)} />
+        </div>
       </div>
     </div>
   );
