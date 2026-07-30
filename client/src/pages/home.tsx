@@ -49,7 +49,7 @@ const services = [
     icon: "🛠️",
   },
   {
-    title: "AI Trainers",
+    title: "AI Training Classes",
     description:
       "Specialized training services to optimize your AI models and systems",
     icon: "📚",

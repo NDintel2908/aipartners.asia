@@ -37,7 +37,7 @@ export default function Footer() {
                 href="/ai-trainers"
                 className="block text-sm text-muted-foreground hover:text-primary transition-colors"
               >
-                AI Trainers
+                AI Training Classes
               </Link>
               <Link
                 href="/ai-workforce"
@@ -152,7 +152,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p>© 2025 AIPartners. All rights reserved.</p>
+          <p>© 2026 AIPartners Asia. All rights reserved.</p>
         </div>
       </div>
     </footer>

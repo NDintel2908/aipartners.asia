@@ -20,6 +20,7 @@ import AIStore from "./pages/ai-store";
 import Contact from "./pages/contact";
 import Maintenance from "./pages/maintenance";
 import FactoryTour from "./pages/factory-tour";
+import RequestProposal from "./pages/request-proposal";
 
 function Router() {
   // Show maintenance page if maintenance mode is enabled
@@ -28,26 +29,42 @@ function Router() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <main className="flex-grow">
-        <Layout>
-          <Switch>
-            <Route path="/" component={Home} />
-            <Route path="/aibuilders" component={AIBuilders} />
-            <Route path="/ai-trainers" component={AITrainers} />
-            <Route path="/ai-workforce" component={AIWorkforce} />
-            <Route path="/ai-store" component={AIStore} />
-            <Route path="/factory-tour" component={FactoryTour} />
-            <Route path="/factory-tour/partner" component={FactoryTour} />
-            <Route path="/factory-tour/factory" component={FactoryTour} />
-            <Route path="/contact" component={Contact} />
-            <Route component={NotFound} />
-          </Switch>
-        </Layout>
-      </main>
-      <Footer />
-    </div>
+    <Switch>
+      {/* RFP page: site navbar + footer, but full-bleed (no centered Layout container) */}
+      <Route path="/start">
+        <div className="min-h-screen flex flex-col">
+          <Navbar />
+          <main className="flex-grow">
+            <RequestProposal />
+          </main>
+          <Footer />
+        </div>
+      </Route>
+
+      {/* Everything else keeps the standard chrome */}
+      <Route>
+        <div className="min-h-screen flex flex-col">
+          <Navbar />
+          <main className="flex-grow">
+            <Layout>
+              <Switch>
+                <Route path="/" component={Home} />
+                <Route path="/aibuilders" component={AIBuilders} />
+                <Route path="/ai-trainers" component={AITrainers} />
+                <Route path="/ai-workforce" component={AIWorkforce} />
+                <Route path="/ai-store" component={AIStore} />
+                <Route path="/factory-tour" component={FactoryTour} />
+                <Route path="/factory-tour/partner" component={FactoryTour} />
+                <Route path="/factory-tour/factory" component={FactoryTour} />
+                <Route path="/contact" component={Contact} />
+                <Route component={NotFound} />
+              </Switch>
+            </Layout>
+          </main>
+          <Footer />
+        </div>
+      </Route>
+    </Switch>
   );
 }
 

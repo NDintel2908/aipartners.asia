@@ -16,6 +16,7 @@ const NavItems = () => {
     { label: t("nav.aiWorkforce"), href: "/ai-workforce" },
     { label: t("nav.aiStore"), href: "/ai-store" },
     { label: t("nav.factoryTour"), href: "/factory-tour/partner" },
+    { label: t("nav.rfp"), href: "/start" },
   ];
 };
 
@@ -38,7 +39,11 @@ export default function Navbar() {
                 href={item.href}
                 className={cn(
                   "transition-all duration-200 hover:text-black hover:scale-105",
-                  location === item.href ? "text-black font-semibold" : "",
+                  item.href === "/start"
+                    ? "font-semibold text-violet-600 hover:text-violet-700"
+                    : location === item.href
+                      ? "text-black font-semibold"
+                      : "",
                 )}
               >
                 {item.label}
@@ -50,7 +55,7 @@ export default function Navbar() {
         {/* Mobile menu button */}
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon">
+            <Button variant="ghost" size="icon" aria-label="Open navigation menu">
               <Menu className="h-5 w-5 text-foreground" />
             </Button>
           </SheetTrigger>
@@ -63,9 +68,11 @@ export default function Navbar() {
                   onClick={() => setOpen(false)}
                   className={cn(
                     "text-lg transition-colors hover:text-gray-300",
-                    location === item.href
-                      ? "text-foreground font-bold"
-                      : "text-foreground",
+                    item.href === "/start"
+                      ? "font-semibold text-violet-600"
+                      : location === item.href
+                        ? "text-foreground font-bold"
+                        : "text-foreground",
                   )}
                 >
                   {item.label}

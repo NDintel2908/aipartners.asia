@@ -22,7 +22,7 @@ export const homeTranslations = {
           description: "Expert development teams crafting custom AI solutions tailored to your needs"
         },
         aiTrainers: {
-          title: "AI Trainers",
+          title: "AI Training Classes",
           description: "Specialized training services to optimize your AI models and systems"
         },
         aiWorkforce: {
@@ -96,7 +96,7 @@ export const homeTranslations = {
           description: "Expert development teams crafting custom AI solutions tailored to your needs"
         },
         aiTrainers: {
-          title: "AI Trainers", 
+          title: "AI Training Classes", 
           description: "Specialized training services to optimize your AI models and systems"
         },
         aiWorkforce: {
@@ -138,7 +138,7 @@ export const homeTranslations = {
           description: "お客様のニーズに合わせたカスタムAIソリューションを提供する専門開発チーム"
         },
         aiTrainers: {
-          title: "AIトレーナー",
+          title: "AIトレーニングクラス",
           description: "AIモデルとシステムを最適化するための専門トレーニングサービス"
         },
         aiWorkforce: {
@@ -175,7 +175,7 @@ export const homeTranslations = {
           description: "お客様のニーズに合わせたカスタムAIソリューションを提供する専門開発チーム"
         },
         aiTrainers: {
-          title: "AIトレーナー",
+          title: "AIトレーニングクラス",
           description: "AIモデルとシステムを最適化するための専門トレーニングサービス"
         },
         aiWorkforce: {

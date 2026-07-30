@@ -4,22 +4,24 @@ export const navTranslations = {
     nav: {
       home: "Home",
       aiBuilders: "AI Builders",
-      aiTrainers: "AI Trainers",
+      aiTrainers: "AI Training Classes",
       aiWorkforce: "AI Workforce",
       aiStore: "AI Agents Market",
       contact: "Contact Us",
-      factoryTour: "Factory Tour"
+      factoryTour: "Factory Tour",
+      rfp: "Request for Proposal"
     }
   },
   ja: {
     nav: {
       home: "ホーム",
       aiBuilders: "AIビルダー",
-      aiTrainers: "AIトレーナー",
+      aiTrainers: "AIトレーニングクラス",
       aiWorkforce: "AI人材",
       aiStore: "AIエージェントマーケット",
       contact: "お問い合わせ",
-      factoryTour: "Factory Tour"
+      factoryTour: "Factory Tour",
+      rfp: "提案のご依頼"
     }
   }
 };
